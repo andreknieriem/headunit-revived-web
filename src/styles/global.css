@@ -1,1 +1,34 @@
 @import "tailwindcss";
+
+@theme {
+  --color-accent: #009688; /* Teal color matching your app */
+}
+
+/* Custom Badge next to Hero Title */
+.hero h1 {
+  display: inline-block !important;
+  position: relative;
+}
+
+.hero h1::after {
+  content: "v1.10.4";
+  display: inline-block;
+  background-color: var(--color-accent);
+  color: white;
+  font-size: 0.25em; /* Smaller badge font size */
+  padding: 0.1rem 0.6rem;
+  border-radius: 9999px;
+  vertical-align: middle;
+  margin-left: 0.75rem;
+  font-weight: 600;
+  letter-spacing: normal;
+  line-height: 1.5;
+  /* Position it slightly "up" */
+  position: relative;
+  top: -12px;
+}
+
+/* Ensure the title container doesn't cut off the badge */
+.hero {
+  overflow: visible;
+}
