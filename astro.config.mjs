@@ -6,7 +6,7 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://andreknieriem.github.io',
-	base: '/headunit-revived',
+	base: '/headunit-revived-web',
 	integrations: [
 		starlight({
 			title: 'Headunit Revived',
