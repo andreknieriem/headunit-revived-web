@@ -1,0 +1,42 @@
+---
+title: Changelog
+description: History of releases and changes in Headunit Revived.
+---
+
+## v.1.10.4
+- Added: Dutch translation 🇳🇱 thanks to safariking
+- Several black screen and connection error enhancements
+- Bugfix: Crash in Background if not started as foreground service
+
+## v.1.10.3
+- Bugfix: Force Software Decoder wasn't getting always the sw decoder
+- Added: Russian translation 🇷🇺 thanks to @prostozema
+- Enhancement: Fixing small issues in the video-decoder which should help lower spec devices to render properly (but act a little bit slower perhaps)
+
+## v.1.10.2
+- Bigfix - Button Mapping ignored #71
+- New Feature: Screen-Orientation Feature to lock to a certain orientation (Landscape/Portrait) #69 thanks to @JanRi3D
+- Enhancement: SSL will now attempt multiple times and not break instantly thanks to @MicaelJarniac
+- Added: Chinese(Tradionnal) translation 🇹🇼 thanks to @GazCore
+- Added: Czech translation 🇨🇿 thanks to @teodortomas #75
+- Fixed brazilian portuguese folder name
+
+## v.1.10.1
+- Bugfix: Added missing 3 Byte startcode which stops some devices to start the projection
+- Added PR #68 - Fix Wifi Direct detection thanks to @rakshan-kumr
+- Added PR #67 - Brazilian Portuguese translation 🇧🇷 thanks to @MicaelJarniac
+- Added PR #66 - Add conscrypt to fix error 7 on lower Android versions 🚀, thanks to @JanRi3D
+
+## v.1.10.0
+- New Feature: Portrait Mode Support (Dashboard & Projection) with smart resolution scaling
+- New Feature: Redesigned Keymap Screen (easier configuration)
+- New Feature: Right Hand side driving setting (#63)
+- New Feature: Auto-Connect last session (Thanks to @JanRi3D) (#21)
+- New Feature: Auto-Selfmode if enabled in settings
+- New Feature: Allow sideloaded apps (#57)
+- Localization: Added German Translation 🇩🇪
+- Improvement: TextureView is now the default renderer
+- Improvement: Fixed Dashboard layout rotation
+- Rewrite: Completly Rewrite the Video-Decoder
+
+[... See GitHub for older releases](https://github.com/andreknieriem/headunit-revived)
