@@ -13,11 +13,10 @@ Welcome to Headunit Revived! This guide will help you set up your Android device
 
 ## Installation
 
-Currently, the app is in the testing phase. To install it:
+Headunit Revived is available directly on the Google Play Store.
 
-1. **Join the community:** Join the [Google Group](https://groups.google.com/g/headunit-revived) to get access.
-2. **Opt-in for testing:** Visit the [Play Store Testing Link](https://play.google.com/apps/testing/com.andrerinas.headunitrevived).
-3. **Download:** Search for "Headunit Revived" in the Play Store on your tablet.
+1. **Download:** Search for "Headunit Revived" in the Play Store on your tablet or click the link below.
+2. **Install:** [Get it on Google Play](https://play.google.com/store/apps/details?id=com.andrerinas.headunitrevived)
 
 ## First Start
 

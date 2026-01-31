@@ -7,55 +7,58 @@ hero:
   image:
     file: ../../assets/logo.png
   actions:
-    - text: Get started
-      link: /guides/setup/
-      icon: right-arrow
-      variant: primary
-    - text: Play Store Testing
-      link: https://groups.google.com/g/headunit-revived
-      icon: external
-    - text: View on GitHub
-      link: https://github.com/andreknieriem/headunit-revived
-      icon: github
-      variant: minimal
----
-
-import { Card, CardGrid } from '@astrojs/starlight/components';
-
-## Features
-
-<CardGrid>
-	<Card title="Wired USB" icon="laptop">
-		Reliable Plug & Play connection via USB cable for a stable experience.
-	</Card>
-	<Card title="Wireless Support" icon="rss">
-		Experimental wireless connection with auto-discovery and manual IP support.
-	</Card>
-	<Card title="High Performance" icon="rocket">
-		Supports resolutions up to 1440p and H.265 video decoding for crisp visuals.
-	</Card>
-	<Card title="Customization" icon="setting">
-		Advanced keymapping, DPI scaling, and full-screen support to fit your device.
-	</Card>
-	<Card title="Portrait Mode" icon="document">
-		Smart resolution scaling for vertical orientations, ideal for modern car displays.
-	</Card>
-	<Card title="Automation" icon="add-document">
-		Trigger connections via Android Intents using Tasker or MacroDroid.
-	</Card>
-</CardGrid>
-
-## Screenshots
-
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
-  <img src="https://github.com/user-attachments/assets/22abbc13-75d5-436f-b0ae-2e92b7648d50" class="rounded-lg shadow-xl" alt="Landscape Mode" />
-  <img src="https://github.com/user-attachments/assets/140bbfdb-5b4f-4d49-a419-85aa91b48371" class="rounded-lg shadow-xl" alt="Portrait Mode" />
-</div>
-
-## Join the Beta
-
-Headunit Revived is coming to the Play Store! To join the testing phase:
-
-1. Join the Google Group: [headunit-revived@googlegroups.com](https://groups.google.com/g/headunit-revived)
-2. Access the [Testing Link](https://play.google.com/apps/testing/com.andrerinas.headunitrevived)
-3. Download the app and provide feedback!
+        - text: Get started
+          link: /guides/setup/
+          icon: right-arrow
+          variant: minimal
+        - text: Get it on Google Play
+          link: https://play.google.com/store/apps/details?id=com.andrerinas.headunitrevived
+          icon: google-play
+          variant: primary
+        - text: View on GitHub
+          link: https://github.com/andreknieriem/headunit-revived
+          icon: github
+          variant: minimal
+    ---
+    
+    import { Card, CardGrid } from '@astrojs/starlight/components';
+    import playBadge from '../../assets/playstore-badge.png';
+    
+    ## Features
+    
+    <CardGrid>
+    	<Card title="Wired USB" icon="laptop">
+    		Reliable Plug & Play connection via USB cable for a stable experience.
+    	</Card>
+    	<Card title="Wireless Support" icon="rss">
+    		Experimental wireless connection with auto-discovery and manual IP support.
+    	</Card>
+    	<Card title="High Performance" icon="rocket">
+    		Supports resolutions up to 1440p and H.265 video decoding for crisp visuals.
+    	</Card>
+    	<Card title="Customization" icon="setting">
+    		Advanced keymapping, DPI scaling, and full-screen support to fit your device.
+    	</Card>
+    	<Card title="Portrait Mode" icon="document">
+    		Smart resolution scaling for vertical orientations, ideal for modern car displays.
+    	</Card>
+    	<Card title="Automation" icon="add-document">
+    		Trigger connections via Android Intents using Tasker or MacroDroid.
+    	</Card>
+    </CardGrid>
+    
+    ## Screenshots
+    
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mt-8">
+      <img src="https://github.com/user-attachments/assets/22abbc13-75d5-436f-b0ae-2e92b7648d50" class="rounded-lg shadow-xl" alt="Landscape Mode" />
+      <img src="https://github.com/user-attachments/assets/140bbfdb-5b4f-4d49-a419-85aa91b48371" class="rounded-lg shadow-xl" alt="Portrait Mode" />
+    </div>
+    
+    ## Download Now
+    
+    Headunit Revived is now available directly on the Google Play Store!
+    
+    <a href="https://play.google.com/store/apps/details?id=com.andrerinas.headunitrevived" target="_blank">
+      <img src={playBadge.src} alt="Get it on Google Play" width="200" />
+    </a>
+    
