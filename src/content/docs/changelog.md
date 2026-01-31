@@ -3,6 +3,17 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.11.0
+- New Feature: Advanced Night Mode (Light Sensor, Screen Brightness, separate thresholds, manual time)
+- Improvement: Audio Stuttering fixed (Optimized ACK handling)
+- Improvement: USB Reconnection stability (Added "Reconnection Required" dialog for stuck sessions)
+- Improvement: WiFi Discovery (Added Multi-Interface Scan and NSD/mDNS support)
+- New Feature: Enhanced Service Notification (Reduced noise, added Exit button)
+- Added: Spanish translation 🇪🇸 thanks to @andrecuellar
+- Added: Ukraine translation 🇺🇦 thanks to welshi32
+- Bugfix: Non-Fullscreen View was stretched, touch could be off
+- Bugfix: Wifi with Headunit Server now works with hotspot
+
 ## v.1.10.4
 - Added: Dutch translation 🇳🇱 thanks to safariking
 - Several black screen and connection error enhancements
