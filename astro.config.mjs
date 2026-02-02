@@ -27,6 +27,8 @@ export default defineConfig({
 						{ label: 'Introduction', slug: 'index' },
 						{ label: 'About the Project', slug: 'about' },
 						{ label: 'Setup Guide', slug: 'guides/setup' },
+						{ label: 'Application Settings', slug: 'guides/settings' },
+						{ label: 'FAQ', slug: 'guides/faq' },
 						{ label: 'Troubleshooting', slug: 'guides/troubleshooting' },
 					],
 				},
@@ -37,6 +39,13 @@ export default defineConfig({
 						{ label: 'Wireless (Experimental)', slug: 'guides/wireless' },
 						{ label: 'Wireless Launcher', slug: 'guides/wireless-launcher' },
 						{ label: 'Intent (Power Users)', slug: 'guides/automation' },
+					],
+				},
+				{
+					label: 'Reference',
+					items: [
+						{ label: 'Hardware Compatibility', slug: 'reference/hardware' },
+						{ label: 'Contributing Translations', slug: 'guides/translations' },
 					],
 				},
 				{
