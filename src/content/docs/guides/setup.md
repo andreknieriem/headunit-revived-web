@@ -29,5 +29,5 @@ When you open the app for the first time:
 
 Choose your preferred connection method:
 - [Wired USB](/guides/wired) (Recommended for stability)
-- [Wireless](/guides/wireless) (Experimental)
+- [Wireless](/guides/wireless) (Advanced)
 - [Selfmode](/guides/setup) (Running Android Auto on the same device)
