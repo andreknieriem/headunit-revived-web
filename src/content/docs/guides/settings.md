@@ -30,9 +30,11 @@ Sets the sampling rate for the microphone input passed to Android Auto.
 *   **Options:** 8kHz, 16kHz, 24kHz, 32kHz, 44.1kHz, 48kHz
 *   **Usage:** Adjust this if you experience audio quality issues with voice commands or calls.
 
-### Wireless Headunit Server
-Enables the background service that listens for wireless Android Auto connections.
-*   **Required:** Yes, for wireless projection to start automatically or manually via launcher.
+### Wireless Mode (New in 1.12.0)
+Defines how the app handles wireless connections.
+*   **Manual:** No background scanning. User must start connection manually from the WiFi dashboard.
+*   **Auto-Scan:** The tablet actively searches for phones running the Android Auto Headunit Server (Port 5277).
+*   **Helper Mode:** The tablet waits for a trigger from a phone utility like **Wireless Helper** or **Wifi Launcher**. Recommended for stability.
 
 ### Auto start Self-Mode
 Automatically starts the "Self-Mode" (local Android Auto simulation) when the application is launched.

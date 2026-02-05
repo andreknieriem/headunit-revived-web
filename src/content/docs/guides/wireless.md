@@ -1,33 +1,49 @@
 ---
 title: Wireless Connection
-description: How to connect wirelessly (Experimental).
+description: Learn how to connect your phone wirelessly to Headunit Revived.
 ---
 
-:::caution
-Wireless connection is experimental and may depend on your network stability.
-:::
+HeadUnit Revived allows you to connect your phone wirelessly via WiFi. In **Version 1.12.0**, we introduced a **Wireless Mode** selector to make connection management more robust and automatic.
 
-## Preparation on your Phone
+## Prerequisites
 
-1. Open **Android Auto Settings** on your phone.
-2. Scroll down to **Version** and tap it several times until Developer Mode is enabled.
-3. Click the three dots in the top right corner and select **Start Headunit Server**.
+*   **Phone:** Android 10 or higher with Android Auto installed.
+*   **Head Unit (Tablet):** Android 4.1+ device with WiFi.
+*   **Network:** Both devices must be on the same network (Hotspot or WiFi).
 
-## Connection Methods
+## Connection Modes
 
-### 1. Network Discovery (Auto-Scan)
+### 1. Helper Mode (Recommended)
+This is the most reliable method. It uses a launcher utility on your phone to trigger the connection automatically.
 
-1. Connect both devices to the same WiFi network (or use a Hotspot).
-2. Open the **WiFi Menu** in Headunit Revived.
-3. Click the **Scan** button in the top right corner.
-4. The app will search for your phone and connect automatically when found.
+*   **Wireless Helper (New):** [GitHub Repo](https://github.com/andreknieriem/wireless-helper) | [Play Store Beta](https://play.google.com/apps/testing/com.andrerinas.wirelesshelper)
+*   **How to setup:**
+    1. Set **Wireless Mode** to **Helper Mode** in Headunit Revived settings.
+    2. Start the service in your helper app on the phone.
+    3. The phone will find the headunit and launch Android Auto instantly.
 
-### 2. Manual IP Entry
+### 2. Auto-Scan Mode
+The headunit actively searches for phones running the native Android Auto "Headunit Server".
 
-1. Find your phone's IP address (usually in WiFi settings -> Advanced).
-2. In Headunit Revived WiFi menu, click **Add new**.
-3. Enter the IP address (e.g., `192.168.1.25`) and click on it to start.
+1. **Phone:** Start the **Headunit Server** in Android Auto Developer Settings.
+2. **Head Unit:** Set **Wireless Mode** to **Auto-Scan Mode**.
+3. Projection will start automatically once the network is detected.
+
+### 3. Manual Mode
+No background scanning. Useful if you want full control or if you are using specific network tools.
+
+1. Set **Wireless Mode** to **Manual**.
+2. Go to the WiFi dashboard in the app and manually click **Scan** or add an IP.
+
+---
+
+## Technical Setup: Native Headunit Server
+If you are not using a helper app, you must manually start the server on your phone:
+
+1. Open **Android Auto Settings**.
+2. Tap **Version** 10 times to enable Developer Settings.
+3. Click the three dots (top right) -> **Start Headunit Server**.
 
 :::important
-In many cases, the connection only works if your phone is **unlocked** and the Android Auto settings page is visible!
+Native mode may fail on some **Phone Hotspots** (10.x.x.x networks). If you encounter timeouts, we highly recommend switching to **Helper Mode**.
 :::
