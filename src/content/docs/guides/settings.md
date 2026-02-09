@@ -54,6 +54,11 @@ Sets the screen density (Dots Per Inch).
 *   **Effect:** Affects the size of UI elements (icons, text) in Android Auto.
 *   **Logic:** Lower values make elements larger, higher values make them smaller. Set to `0` for Auto.
 
+### Custom Insets (Margins)
+Manually adjust screen margins (Top, Bottom, Left, Right).
+*   **Usage:** Correct overscan issues or hide hardware-related screen artifacts.
+*   **Feature:** Includes a live preview that updates the app's padding instantly.
+
 ### Start in Fullscreen Mode
 If enabled, the projection screen will hide the Android status bar and navigation bar (Immersive Mode).
 

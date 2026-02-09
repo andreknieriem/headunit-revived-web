@@ -3,6 +3,14 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.13.0
+- Improvement: USB stability overhaul (implemented 16KB internal buffer)
+- New Feature: Custom Insets (Margins) setting with live preview
+- Fixed: Video decoder blackscreen on some AI-Boxes (H.264 NAL padding)
+- Fixed: UI focus issues in Settings causing system bars to reappear
+- Fixed: Native SIGABRT crashes during reconnection
+- Fixed: Android 15 Edge-to-Edge compatibility (SDK 35)
+
 ## v.1.12.0
 - Major Improvement: Wireless Connectivity overhaul (Socket Reuse, better Handshake)
 - New Feature: Wireless Mode Switch (Manual, Auto-Scan, Wireless Helper Support)
