@@ -3,6 +3,13 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.13.1
+- Fixed: Custom Insets Dialog with a Scrollview for better landscape support
+- Fixed: Multiple app crashes reported in Play Console (MicRecorder, Navigation, SSL)
+- Fixed: Warnings in Play Console for edge-to-edge display compliance
+- Fixed: Race condition in SSL read/write operations
+- Improvement: Prevent disconnect if a single corrupted package is detected in SSL transfer
+
 ## v.1.13.0
 - Improvement: USB stability overhaul (implemented 16KB internal buffer)
 - New Feature: Custom Insets (Margins) setting with live preview
