@@ -3,6 +3,12 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.13.2
+- Fixed: Margins now working correctly on devices prior to Android 5.0 (Jelly Bean/KitKat)
+- Fixed: Broken colors and mixed UI themes (Day/Night) on older devices
+- Fixed: Connection drop after ~20 minutes caused by oversized/fragmented SSL messages
+- Fixed: Various compiler and lint warnings for better stability
+
 ## v.1.13.1
 - Fixed: Custom Insets Dialog with a Scrollview for better landscape support
 - Fixed: Multiple app crashes reported in Play Console (MicRecorder, Navigation, SSL)
