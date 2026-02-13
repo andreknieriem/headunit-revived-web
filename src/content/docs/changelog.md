@@ -3,6 +3,11 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.13.3
+- Fixed: Screen Issues on Android 4.x regarding header and navigation bars.
+- Fixed: Night-Mode toggle and calculation bugs.
+- New Feature: Integrated a comprehensive language selector for easier app localization.
+
 ## v.1.13.2
 - Fixed: Margins now working correctly on devices prior to Android 5.0 (Jelly Bean/KitKat)
 - Fixed: Broken colors and mixed UI themes (Day/Night) on older devices

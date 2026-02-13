@@ -11,7 +11,7 @@
 }
 
 .hero h1::after {
-  content: "v1.13.2";
+  content: "v1.13.3";
   display: inline-block;
   background-color: var(--color-accent);
   color: white;
