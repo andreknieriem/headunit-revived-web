@@ -44,6 +44,10 @@ Automatically starts the "Self-Mode" (local Android Auto simulation) when the ap
 ### Auto-Connect Last Session
 Automatically attempts to reconnect to the last used device (WiFi or USB) when the application starts.
 
+### Auto-Start on Bluetooth (New in 1.14.0)
+Automatically opens the app when a specific Bluetooth device (e.g., your car's headunit) is connected.
+*   **Setup:** Enable the toggle and select your car's Bluetooth name or MAC address from the list.
+
 ## Graphic Settings
 
 ### Resolution
@@ -81,6 +85,13 @@ Selects the Android View type used for rendering the video stream.
 ### Enable Audio Sink
 If enabled, the Head Unit acts as a speaker. Android Auto routes audio (Music, Nav, Calls) to the Head Unit.
 *   **Disable:** If you want the phone to handle audio output directly (e.g., via Bluetooth to car speakers).
+
+### Audio Volume Offsets (New in 1.14.0)
+Provides separate volume gain controls for different audio streams.
+*   **Streams:** Media (Music), Assistant (Google Voice), and Navigation (Maps/Waze).
+*   **Control:** Accessible via a consolidated dialog with vertical sliders.
+*   **Range:** 0% to 200% (100% is the default/neutral gain).
+*   **Benefit:** Allows you to balance the volume levels if, for example, navigation prompts are too quiet compared to your music.
 
 ### Use AAC Audio
 (Experimental) Requests AAC compressed audio. Can save bandwidth but requires compatible decoding on the Head Unit.

@@ -3,6 +3,13 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.14.0
+- New Feature: Separate Audio Volume Offsets (Media, Assistant, Navigation) via a consolidated settings dialog.
+- New Feature: Auto-Start on Bluetooth connection (Option to open the app when a specific BT device is connected).
+- Fixed: Improved connection stability on Mediatek Headunits.
+- Fixed: SystemUI issues on devices below Android 6.0.
+- Fixed: Resolved audio truncation issues during projection.
+
 ## v.1.13.3
 - Fixed: Screen Issues on Android 4.x regarding header and navigation bars.
 - Fixed: Night-Mode toggle and calculation bugs.
