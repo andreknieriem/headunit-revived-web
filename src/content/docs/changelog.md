@@ -3,6 +3,15 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.14.1
+- **USB Auto-Connect:** Integrated general USB auto-connect logic into "Auto-Connect Last Session". The app now automatically starts projection when a known USB device is plugged in.
+- **USB Soft-Reset:** Added automatic recovery logic for USB "stalls" (re-claims interface after 3 consecutive errors), reducing the need for physical re-plugs.
+- **Audio Overhaul:** Improved audio focus priority using `MediaSessionCompat` and immediate focus responses. Fixes issues where background apps would block Android Auto audio.
+- **Robust Task Switching:** Fixed connection drops when leaving the app via Home or clicking the Launcher icon. Music continues seamlessly in the background.
+- **Enhanced Keymap Debugger:** New "Key-Sniffer" in settings that displays all key events, special characters, and proprietary steering wheel intents (MTC, FYT) for easier configuration.
+- **Official Navigation Registration:** Registered HURev as a system navigation provider. Compatible with hardware "NAV" buttons on most headunits.
+- **User Experience:** Removed redundant "Already connected" and "Reconnection required" alerts.
+
 ## v.1.14.0
 - New Feature: Separate Audio Volume Offsets (Media, Assistant, Navigation) via a consolidated settings dialog.
 - New Feature: Auto-Start on Bluetooth connection (Option to open the app when a specific BT device is connected).

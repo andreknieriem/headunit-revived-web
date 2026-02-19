@@ -41,12 +41,17 @@ Positions the Android Auto rail (navigation/status) for right-side driving vehic
 ### Auto start Self-Mode
 Automatically starts the "Self-Mode" (local Android Auto simulation) when the application is launched.
 
-### Auto-Connect Last Session
+### Auto-Connect Last Session (Updated in 1.14.1)
 Automatically attempts to reconnect to the last used device (WiFi or USB) when the application starts.
+*   **Wired USB:** Now includes automatic USB detection. If enabled, projection starts as soon as a known USB device is plugged in.
 
 ### Auto-Start on Bluetooth (New in 1.14.0)
 Automatically opens the app when a specific Bluetooth device (e.g., your car's headunit) is connected.
 *   **Setup:** Enable the toggle and select your car's Bluetooth name or MAC address from the list.
+
+### Keymap (Updated in 1.14.1)
+Allows mapping physical buttons (steering wheel, knob) to Android Auto actions.
+*   **Key-Sniffer:** The setting screen now features a live debugger that shows all incoming key events, including special characters and proprietary intents from Android Headunits (MTC, FYT).
 
 ## Graphic Settings
 
