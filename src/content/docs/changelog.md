@@ -3,6 +3,12 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.14.2
+- **Stability Fix:** Resolved a critical issue where the app could crash (`SuperNotCalledException`) during certain task-switching scenarios.
+- **Improved Lifecycle:** Fixed service stop logic ensuring that both the app and its notification disappear completely when closing.
+- **Protocol Fix:** Adjusted default Bluetooth behavior to prevent unintended activation on certain devices.
+- **Internationalization:** Fixed incorrect "Version" string translations across several languages.
+
 ## v.1.14.1
 - **USB Auto-Connect:** Integrated general USB auto-connect logic into "Auto-Connect Last Session". The app now automatically starts projection when a known USB device is plugged in.
 - **USB Soft-Reset:** Added automatic recovery logic for USB "stalls" (re-claims interface after 3 consecutive errors), reducing the need for physical re-plugs.
