@@ -7,12 +7,15 @@ Android Head Units use a vast variety of processors (SoCs). Some work perfectly 
 
 ## Tested Devices
 
-| Device / SoC Type | Android Version | Recommended Settings | Notes |
+| Device / SoC Type | Android Version | View| Recommended Settings (different from default) |
 | :--- | :--- | :--- | :--- |
-| **Snapdragon (High-end)** | 10 - 13 | Default | Works flawlessly at 1080p/60fps. |
-| **Mediatek (MTK)** | 9 - 12 | **View Mode: GLES20** or **Force Legacy Decoder** | Modern Async decoders often crash on MTK. |
-| **Rockchip (PX5/PX6)** | 9 - 10 | **Use Native SSL** | Helps with audio stuttering. |
-| **Older Tablets (Lollipop)** | 5.1 | **Force Legacy Decoder**, 480p | Low RAM devices should stay at 480p. |
+| Samsung Galaxy S24 | 16 | Landscape | Resolution: 1080p, DPI 240 |
+| Samsung Galaxy S24 | 16 | Portrait | Resolution: 1080p, DPI 175 |
+| Amazon Fire HD 8 | 9 | Landscape | View-Mode: Gles20, Video-Codec: H264 |
+| Amazon Fire HD 8 | 9 | Portrait | DPI: 150, View-Mode: Gles20, Video-Codec: H264 |
+| Chinese Headunit Ultrawide (1920x720) | 8.1 | Landscape | Resolution: 1080p, DPI 240, View-Mode: Gles20, Video-Codec: H264 |
+| Noname Chinese Tablet | 8.1 or 5.1, hard to tell | Landscape | Resolution: 720p, View-Mode: Gles20, Video-Codec: H264 |
+| Noname Chinese Tablet | 8.1 or 5.1, hard to tell | Portrait | Resolution: 1080p, DPI: 150, View-Mode: Gles20, Video-Codec: H264 |
 
 ## Troubleshooting Tips
 
