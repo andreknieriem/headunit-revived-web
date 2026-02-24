@@ -3,7 +3,14 @@ title: Automation (Intents)
 description: Trigger connections via Android Intents.
 ---
 
-For power users, Headunit Revived supports triggering a wireless connection attempt using an Android Intent. This is ideal for automation tools like **Tasker**, **MacroDroid**, or via **ADB**.
+For power users, Headunit Revived supports triggering a wireless connection attempt using an Android Intent or App Shortcuts. This is ideal for automation tools like **Tasker**, **MacroDroid**, **Samsung Modes & Routines**, or via **ADB**.
+
+## App Shortcuts (Easiest)
+Starting with v1.14.3, Headunit Revived supports **Static App Shortcuts**.
+- **Connect:** Automatically connects to the last known device.
+- **Disconnect:** Safely ends the current session.
+
+These shortcuts are natively detected by **Samsung Modes & Routines** and can be added as widgets to your home screen.
 
 ## URI Schemes
 

@@ -3,6 +3,12 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.14.3
+- **App Shortcuts:** Added native support for App Shortcuts. You can now use "Connect" and "Disconnect" actions directly from your launcher or within Samsung Modes & Routines.
+- **Navigation Category:** Officially registered the app in the "Maps" category. This improves visibility in third-party car launchers and enables compatibility with hardware NAV buttons.
+- **Improved Stability:** Refactored internal data FIFO and memory handling to prevent rare freezes during long sessions.
+- **Enhanced Compatibility:** Marked GPS, Microphone, and Bluetooth hardware as optional in the manifest to allow installation on a wider range of devices, including Amazon Fire Tablets.
+
 ## v.1.14.2
 - **Stability Fix:** Resolved a critical issue where the app could crash (`SuperNotCalledException`) during certain task-switching scenarios.
 - **Improved Lifecycle:** Fixed service stop logic ensuring that both the app and its notification disappear completely when closing.
