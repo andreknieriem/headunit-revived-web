@@ -16,6 +16,7 @@ Android Head Units use a vast variety of processors (SoCs). Some work perfectly 
 | Chinese Headunit Ultrawide (1920x720) | 8.1 | Landscape | Resolution: 1080p, DPI 240, View-Mode: Gles20, Video-Codec: H264 |
 | Noname Chinese Tablet | 8.1 or 5.1, hard to tell | Landscape | Resolution: 720p, View-Mode: Gles20, Video-Codec: H264 |
 | Noname Chinese Tablet | 8.1 or 5.1, hard to tell | Portrait | Resolution: 1080p, DPI: 150, View-Mode: Gles20, Video-Codec: H264 |
+| Blaupunkt Bogota 950 (Car Radio)| 4.2.2 | Landscape | Res: 480p, DPI: 150, View-Mode: Surface Video-Codec H264, Fullscreen:Off |
 
 ## Troubleshooting Tips
 
