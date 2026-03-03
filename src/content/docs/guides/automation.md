@@ -6,9 +6,10 @@ description: Trigger connections via Android Intents.
 For power users, Headunit Revived supports triggering a wireless connection attempt using an Android Intent or App Shortcuts. This is ideal for automation tools like **Tasker**, **MacroDroid**, **Samsung Modes & Routines**, or via **ADB**.
 
 ## App Shortcuts (Easiest)
-Starting with v1.14.3, Headunit Revived supports **Static App Shortcuts**.
+Starting with **v1.15.0**, Headunit Revived supports **Static App Shortcuts**.
 - **Connect:** Automatically connects to the last known device.
 - **Disconnect:** Safely ends the current session.
+- **Mode: Day / Night / Auto:** Directly controls the display theme.
 
 These shortcuts are natively detected by **Samsung Modes & Routines** and can be added as widgets to your home screen.
 
@@ -17,8 +18,22 @@ These shortcuts are natively detected by **Samsung Modes & Routines** and can be
 ### Connect to IP
 `headunit://connect?ip=<PHONE_IP>`
 
-### Disconnect Session (New in v1.14.3)
+### Disconnect Session
 `headunit://disconnect`
+
+### Set Night Mode
+`headunit://nightmode?state=<VALUE>`
+- **Values:** `day`, `night`, `auto` (restores automatic calculation)
+
+## Intent Actions
+If your automation app prefers standard Intent Actions over URIs, you can use:
+
+- **Connect:** `com.andrerinas.headunitrevived.ACTION_CONNECT`
+- **Disconnect:** `com.andrerinas.headunitrevived.ACTION_DISCONNECT`
+- **Night Mode:** `com.andrerinas.headunitrevived.ACTION_SET_NIGHT_MODE`
+    - Requires a String extra named `state` with value `day`, `night`, or `auto`.
+
+**Note:** These are Activity-based intents targetting the `AutomationActivity`.
 
 ## Examples
 
@@ -27,10 +42,11 @@ These shortcuts are natively detected by **Samsung Modes & Routines** and can be
 adb shell am start -a android.intent.action.VIEW -d "headunit://connect?ip=192.168.1.25"
 ```
 
-### ADB Command (Disconnect)
+### ADB Command (Night Mode)
 ```bash
-adb shell am start -a android.intent.action.VIEW -d "headunit://disconnect"
-```
+# Force night mode
+adb shell am start -a android.intent.action.VIEW -d "headunit://nightmode?state=night"
+```,old_string:
 
 ### Automation Apps
 Use the "Open Link" or "Send Intent" action in your preferred automation app with the URI scheme above. Ensure you replace `<PHONE_IP>` with the actual static IP of your phone.

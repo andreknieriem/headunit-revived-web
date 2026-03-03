@@ -41,9 +41,19 @@ Positions the Android Auto rail (navigation/status) for right-side driving vehic
 ### Auto start Self-Mode
 Automatically starts the "Self-Mode" (local Android Auto simulation) when the application is launched.
 
-### Auto-Connect Last Session (Updated in 1.14.1)
-Automatically attempts to reconnect to the last used device (WiFi or USB) when the application starts.
-*   **Wired USB:** Now includes automatic USB detection. If enabled, projection starts as soon as a known USB device is plugged in.
+### Auto-Connect Priority (New in 1.15.0)
+Redesigned connection logic with reorderable priorities.
+*   **Behavior:** Allows you to decide the order in which the app tries to connect. You can use drag-and-drop to prioritize **Last Session**, **USB Auto-Connect**, or **Self-Mode**.
+*   **Flow:** The app will try each enabled method in the specified order until a connection is established.
+
+### USB Stability Tools (New in 1.15.0)
+Advanced tools to improve compatibility with wireless Android Auto adapters.
+*   **USB Stability Check:** Enable this if your adapter disconnects/reconnects briefly during the initial handshake. The app will wait for the device to settle before starting the session.
+*   **Stability Timeout:** Configurable wait time (default 10s).
+
+### Max Reconnect Attempts (New in 1.15.0)
+*   **Options:** 1 to 10
+*   **Description:** Configures how many times the app should automatically try to restart a failed session before giving up.
 
 ### Auto-Start on Bluetooth (New in 1.14.0)
 Automatically opens the app when a specific Bluetooth device (e.g., your car's headunit) is connected.
@@ -52,6 +62,15 @@ Automatically opens the app when a specific Bluetooth device (e.g., your car's h
 ### Keymap (Updated in 1.14.1)
 Allows mapping physical buttons (steering wheel, knob) to Android Auto actions.
 *   **Key-Sniffer:** The setting screen now features a live debugger that shows all incoming key events, including special characters and proprietary intents from Android Headunits (MTC, FYT).
+*   **BMW Support:** Compatible with hardware "NAV" buttons when the app is set as the primary navigation provider.
+
+## System Integration (New in 1.15.0)
+
+### Navigation Provider
+Headunit Revived now officially registers as a system-wide navigation app.
+*   **Category:** `maps`
+*   **Benefit:** This improves visibility in third-party car launchers and ensures compatibility with vehicle hardware (e.g., BMW system menus or iDrive integration).
+*   **Intents:** Supports standard `NAVIGATE` intent filters.
 
 ## Graphic Settings
 

@@ -3,10 +3,15 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
-## v.1.14.3
-- **App Shortcuts:** Added native support for App Shortcuts. You can now use "Connect" and "Disconnect" actions directly from your launcher or within Samsung Modes & Routines.
-- **Navigation Category:** Officially registered the app in the "Maps" category. This improves visibility in third-party car launchers and enables compatibility with hardware NAV buttons.
+## v.1.15.0
+- **Auto-Connect Priority:** Redesigned connection logic with reorderable priorities. You can now use drag-and-drop to decide the order in which the app tries to connect (Last Session, USB, Self-Mode).
+- **USB Stability Tools:** Added a dedicated USB stability check and configurable timeout (default 10s). This significantly improves compatibility with wireless Android Auto adapters.
+- **Max Reconnect Attempts:** You can now configure how many times the app should automatically try to restart a failed session (1 to 10 attempts).
+- **Automation & App Shortcuts:** Added native support for App Shortcuts. Trigger "Connect", "Disconnect", and "Night Mode" actions directly from your launcher or within **Samsung Modes & Routines**.
+- **Remote Night Mode:** Control the display theme (Day/Night/Auto) via external intents or shortcuts.
+- **BMW & System Integration:** Improved registration as a system navigation provider (`category: maps`). This enables better recognition by vehicle systems (like BMW) and compatibility with hardware NAV buttons.
 - **Improved Stability:** Refactored internal data FIFO and memory handling to prevent rare freezes during long sessions.
+- **Localization:** Synchronized and updated all translations (AR, CS, ES, HU, NL, PL, PT-BR, RU, UK, ZH-TW).
 - **Enhanced Compatibility:** Marked GPS, Microphone, and Bluetooth hardware as optional in the manifest to allow installation on a wider range of devices, including Amazon Fire Tablets.
 
 ## v.1.14.2
