@@ -14,12 +14,12 @@ HeadUnit Revived allows you to connect your phone wirelessly via WiFi. In **Vers
 ## Connection Modes
 
 ### 1. Helper Mode (Recommended)
-This is the most reliable method. It uses a launcher utility on your phone to trigger the connection automatically.
+This is the most reliable method. It uses our companion app on your phone to trigger the connection automatically.
 
-*   **Wireless Helper (New):** [GitHub Repo](https://github.com/andreknieriem/wireless-helper) | [Play Store Beta](https://play.google.com/apps/testing/com.andrerinas.wirelesshelper)
+*   **Wireless Helper:** [Google Play Store](https://play.google.com/store/apps/details?id=com.andrerinas.wirelesshelper)
 *   **How to setup:**
     1. Set **Wireless Mode** to **Helper Mode** in Headunit Revived settings.
-    2. Start the service in your helper app on the phone.
+    2. Start the service in the **Wireless Helper** app on your phone.
     3. The phone will find the headunit and launch Android Auto instantly.
 
 ### 2. Auto-Scan Mode

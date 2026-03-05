@@ -37,7 +37,7 @@ export default defineConfig({
 					items: [
 						{ label: 'Wired USB', slug: 'guides/wired' },
 						{ label: 'Wireless Connection', slug: 'guides/wireless' },
-						{ label: 'Wireless Launcher', slug: 'guides/wireless-launcher' },
+						{ label: 'Wireless Helper', slug: 'guides/wireless-helper' },
 						{ label: 'Intent (Power Users)', slug: 'guides/automation' },
 					],
 				},

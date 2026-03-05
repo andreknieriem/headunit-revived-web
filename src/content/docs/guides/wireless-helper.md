@@ -1,17 +1,17 @@
 ---
-title: Wireless Helper & Launcher
-description: Use helper apps to automate your wireless connection.
+title: Wireless Helper
+description: Use our companion app to automate your wireless connection.
 ---
 
-Helper apps are the most reliable way to establish a wireless connection between your phone and Headunit Revived. They automate the handshake process so you don't have to touch your phone when you get into the car.
+The **Wireless Helper** is the most reliable way to establish a wireless connection between your phone and Headunit Revived. It automates the handshake process so you don't have to touch your phone when you get into the car.
 
-## Recommended: Wireless Helper (New)
+## Recommended: Wireless Helper
 
-We developed [Wireless Helper](https://github.com/andreknieriem/wireless-helper) specifically for Headunit Revived. It is lightweight, modern, and supports both mDNS (Zero-Config) and Bluetooth auto-start.
+We developed the **Wireless Helper** specifically for Headunit Revived. It is lightweight, modern, and supports both mDNS (Zero-Config), Wi-Fi Direct Auto-Connect, and Bluetooth auto-start.
 
 ### Setup
 1. **Head Unit:** Go to Settings -> Wireless Mode and select **Helper Mode**.
-2. **Phone:** Install [Wireless Helper](https://play.google.com/apps/testing/com.andrerinas.wirelesshelper).
+2. **Phone:** Install [Wireless Helper](https://play.google.com/store/apps/details?id=com.andrerinas.wirelesshelper) from the Google Play Store.
 3. **Configure:** In Wireless Helper, grant permissions and optionally select your car's Bluetooth for auto-start.
 4. **Result:** Just start your car, and Android Auto will appear on your tablet automatically.
 

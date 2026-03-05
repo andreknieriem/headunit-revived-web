@@ -19,6 +19,10 @@ If you encounter issues while using Headunit Revived, check the following soluti
 ### USB Connection Fails
 - See the [Wired USB Guide](/guides/wired/#troubleshooting-usb) for specific USB tips.
 
+### Google Maps touch not working (Portrait Mode)
+If you use the app in Portrait Mode and cannot interact with the map (but other buttons work), it's likely a scaling issue.
+- **Fix:** Go to **Settings** -> **DPI** and set a value **below 200** (e.g., 190). Restart the session to apply.
+
 ## Still having trouble?
 
 - **GitHub Issues:** [Report a bug](https://github.com/andreknieriem/headunit-revived/issues)
