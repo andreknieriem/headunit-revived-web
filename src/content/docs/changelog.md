@@ -3,6 +3,16 @@ title: Changelog
 description: History of releases and changes in Headunit Revived.
 ---
 
+## v.1.15.1
+- **Auto-Optimization Wizard:** Added a setup wizard that scans your hardware and display to recommend the best Resolution, DPI, and Codec settings.
+- **Self Mode Offline Fix:** Resolved an issue preventing Self Mode from starting when no active WiFi or data connection was present.
+- **Improved Audio Routing:** Enhanced the reliability of audio switching to the headunit by initializing the MediaSession earlier.
+- **GPS Speed Fix:** Fixed a bug where navigation apps would show double the actual speed due to an incorrect unit conversion.
+- **UI & UX Improvements:** 
+    - Used Constraints Barriers to fix button alignment on the home screen for multi-line labels.
+    - Improved settings readability on small screens.
+    - Standardized numeric input dialogs (DPI, Thresholds) with consistent styling and padding.
+
 ## v.1.15.0
 - **Auto-Connect Priority:** Redesigned connection logic with reorderable priorities. You can now use drag-and-drop to decide the order in which the app tries to connect (Last Session, USB, Self-Mode).
 - **USB Stability Tools:** Added a dedicated USB stability check and configurable timeout (default 10s). This significantly improves compatibility with wireless Android Auto adapters.
