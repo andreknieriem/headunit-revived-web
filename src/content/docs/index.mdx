@@ -1,7 +1,6 @@
 ---
 title: Headunit Revived
 description: Turn your Android device into a modern Android Auto Headunit.
-template: splash
 hero:
   tagline: A revived version of the original headunit project. Experience Android Auto on your tablet or headunit with ease.
   image:
@@ -21,30 +20,29 @@ hero:
       variant: minimal
 ---
 
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
 import playBadge from '../../assets/playstore-badge.png';
 
 ## Features
 
 <CardGrid>
-	<Card title="Wired USB" icon="laptop">
-		Reliable Plug & Play connection via USB cable for a stable experience.
-	</Card>
-	<Card title="Wireless Support" icon="rss">
-		Major overhaul in v.1.12.0. Supports Auto-Scan, manual IP, and the new Wireless Helper companion app.
-	</Card>
-	<Card title="High Performance" icon="rocket">
-		Supports resolutions up to 1440p and H.265 video decoding for crisp visuals.
-	</Card>
-	<Card title="Customization" icon="setting">
-		Advanced keymapping, DPI scaling, and full-screen support to fit your device.
-	</Card>
-	<Card title="Portrait Mode" icon="document">
-		Smart resolution scaling for vertical orientations, ideal for modern car displays.
-	</Card>
-	<Card title="Automation" icon="add-document">
-		Trigger connections via Android Intents using Tasker or MacroDroid.
-	</Card>
+	<LinkCard title="Wired USB" icon="laptop" href="/guides/wired/"
+		description="Reliable Plug & Play connection via USB cable for a stable experience." />
+	
+	<LinkCard title="Wireless Support" icon="rss" href="/guides/wireless/"
+		description="Major overhaul in v.1.12.0. Supports Auto-Scan, manual IP, and the new Wireless Helper app." />
+	
+	<LinkCard title="High Performance" icon="rocket" href="/reference/hardware/"
+		description="Supports resolutions up to 1440p and H.265 video decoding for crisp visuals." />
+	
+	<LinkCard title="Customization" icon="setting" href="/guides/settings/"
+		description="Advanced keymapping, DPI scaling, and full-screen support to fit your device." />
+	
+	<LinkCard title="Portrait Mode" icon="document" href="/guides/settings/#orientation"
+		description="Smart resolution scaling for vertical orientations, ideal for modern car displays." />
+	
+	<LinkCard title="Automation" icon="add-document" href="/guides/automation/"
+		description="Trigger connections via Android Intents using Tasker or MacroDroid." />
 </CardGrid>
 
 ## Screenshots
