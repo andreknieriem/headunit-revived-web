@@ -1,7 +1,21 @@
 ---
 title: Changelog
-description: History of releases and changes in Headunit Revived.
+description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
+
+## v.2.0.0
+- **Fixed Android Auto 16.4 Compatibility:** Full support for the latest Android Auto updates. Resolved "ActivityNotFound" and connection drops by implementing a new broadcast-based trigger mechanism.
+- **Native Wi-Fi Direct (P2P) Support:** Connect your phone to the headunit without a shared network or hotspot. The headunit now automatically becomes visible as a P2P peer for a seamless wireless experience.
+- **Refactored Connection Core:** Complete rewrite of the internal connection handling using the new **CommManager**. Improved stability, faster handshakes, and better handling of background transitions.
+- **Enhanced Fullscreen Logic:** A new flexible system allows you to choose between **Immersive** (hide everything), **Status Only** (keep navigation bars visible), or **Normal** view modes.
+- **Auto-Optimization Wizard:** A new setup wizard that scans your hardware and display to automatically recommend the best Resolution, DPI, and Codec settings.
+- **Self Mode Offline Fix:** Improved loopback connection by using Network ID 0, allowing Self Mode to start reliably without an active internet connection.
+- **Early MediaSession Initialization:** Resolved audio routing issues where the phone would sometimes play sound through its own speakers instead of the headunit.
+- **GPS Speed Fix:** Accurate speed reporting for navigation apps by correcting internal unit conversions.
+- **UI & UX Improvements:** 
+    - Used Constraints Barriers to fix button alignment on the home screen for multi-line labels.
+    - Improved settings readability on small screens.
+    - Standardized numeric input dialogs (DPI, Thresholds) with consistent styling and padding.
 
 ## v.1.15.1
 - **Auto-Optimization Wizard:** Added a setup wizard that scans your hardware and display to recommend the best Resolution, DPI, and Codec settings.
@@ -14,121 +28,8 @@ description: History of releases and changes in Headunit Revived.
     - Standardized numeric input dialogs (DPI, Thresholds) with consistent styling and padding.
 
 ## v.1.15.0
-- **Auto-Connect Priority:** Redesigned connection logic with reorderable priorities. You can now use drag-and-drop to decide the order in which the app tries to connect (Last Session, USB, Self-Mode).
-- **USB Stability Tools:** Added a dedicated USB stability check and configurable timeout (default 10s). This significantly improves compatibility with wireless Android Auto adapters.
-- **Max Reconnect Attempts:** You can now configure how many times the app should automatically try to restart a failed session (1 to 10 attempts).
-- **Automation & App Shortcuts:** Added native support for App Shortcuts. Trigger "Connect", "Disconnect", and "Night Mode" actions directly from your launcher or within **Samsung Modes & Routines**.
-- **Remote Night Mode:** Control the display theme (Day/Night/Auto) via external intents or shortcuts.
-- **BMW & System Integration:** Improved registration as a system navigation provider (`category: maps`). This enables better recognition by vehicle systems (like BMW) and compatibility with hardware NAV buttons.
-- **Improved Stability:** Refactored internal data FIFO and memory handling to prevent rare freezes during long sessions.
-- **Localization:** Synchronized and updated all translations (AR, CS, ES, HU, NL, PL, PT-BR, RU, UK, ZH-TW).
-- **Enhanced Compatibility:** Marked GPS, Microphone, and Bluetooth hardware as optional in the manifest to allow installation on a wider range of devices, including Amazon Fire Tablets.
-
-## v.1.14.2
-- **Stability Fix:** Resolved a critical issue where the app could crash (`SuperNotCalledException`) during certain task-switching scenarios.
-- **Improved Lifecycle:** Fixed service stop logic ensuring that both the app and its notification disappear completely when closing.
-- **Protocol Fix:** Adjusted default Bluetooth behavior to prevent unintended activation on certain devices.
-- **Internationalization:** Fixed incorrect "Version" string translations across several languages.
-
-## v.1.14.1
-- **USB Auto-Connect:** Integrated general USB auto-connect logic into "Auto-Connect Last Session". The app now automatically starts projection when a known USB device is plugged in.
-- **USB Soft-Reset:** Added automatic recovery logic for USB "stalls" (re-claims interface after 3 consecutive errors), reducing the need for physical re-plugs.
-- **Audio Overhaul:** Improved audio focus priority using `MediaSessionCompat` and immediate focus responses. Fixes issues where background apps would block Android Auto audio.
-- **Robust Task Switching:** Fixed connection drops when leaving the app via Home or clicking the Launcher icon. Music continues seamlessly in the background.
-- **Enhanced Keymap Debugger:** New "Key-Sniffer" in settings that displays all key events, special characters, and proprietary steering wheel intents (MTC, FYT) for easier configuration.
-- **Official Navigation Registration:** Registered HURev as a system navigation provider. Compatible with hardware "NAV" buttons on most headunits.
-- **User Experience:** Removed redundant "Already connected" and "Reconnection required" alerts.
-
-## v.1.14.0
-- New Feature: Separate Audio Volume Offsets (Media, Assistant, Navigation) via a consolidated settings dialog.
-- New Feature: Auto-Start on Bluetooth connection (Option to open the app when a specific BT device is connected).
-- Fixed: Improved connection stability on Mediatek Headunits.
-- Fixed: SystemUI issues on devices below Android 6.0.
-- Fixed: Resolved audio truncation issues during projection.
-
-## v.1.13.3
-- Fixed: Screen Issues on Android 4.x regarding header and navigation bars.
-- Fixed: Night-Mode toggle and calculation bugs.
-- New Feature: Integrated a comprehensive language selector for easier app localization.
-
-## v.1.13.2
-- Fixed: Margins now working correctly on devices prior to Android 5.0 (Jelly Bean/KitKat)
-- Fixed: Broken colors and mixed UI themes (Day/Night) on older devices
-- Fixed: Connection drop after ~20 minutes caused by oversized/fragmented SSL messages
-- Fixed: Various compiler and lint warnings for better stability
-
-## v.1.13.1
-- Fixed: Custom Insets Dialog with a Scrollview for better landscape support
-- Fixed: Multiple app crashes reported in Play Console (MicRecorder, Navigation, SSL)
-- Fixed: Warnings in Play Console for edge-to-edge display compliance
-- Fixed: Race condition in SSL read/write operations
-- Improvement: Prevent disconnect if a single corrupted package is detected in SSL transfer
-
-## v.1.13.0
-- Improvement: USB stability overhaul (implemented 16KB internal buffer)
-- New Feature: Custom Insets (Margins) setting with live preview
-- Fixed: Video decoder blackscreen on some AI-Boxes (H.264 NAL padding)
-- Fixed: UI focus issues in Settings causing system bars to reappear
-- Fixed: Native SIGABRT crashes during reconnection
-- Fixed: Android 15 Edge-to-Edge compatibility (SDK 35)
-
-## v.1.12.0
-- Major Improvement: Wireless Connectivity overhaul (Socket Reuse, better Handshake)
-- New Feature: Wireless Mode Switch (Manual, Auto-Scan, Wireless Helper Support)
-- Added: Support for Wireless Helper companion app
-- Fixed: Android 15 (16KB page size) compatibility for native libraries
-
-## v.1.11.1
-- Improvement: 1440p and h265 are now checked both. Some old devices have more than 1080p but no h265 support and android auto crashes with Error 11
-- Fixed bug in Kitkat Devices on search for wireless devices
-- Merged PR #94 - Fixed blurry icon. Thanks to @nicoruy
-- Merged PR #95 - Make Settings own View to apply directly. Thanks to @nicoruy
-
-## v.1.11.0
-- New Feature: Advanced Night Mode (Light Sensor, Screen Brightness, separate thresholds, manual time)
-- Improvement: Audio Stuttering fixed (Optimized ACK handling)
-- Improvement: USB Reconnection stability (Added "Reconnection Required" dialog for stuck sessions)
-- Improvement: WiFi Discovery (Added Multi-Interface Scan and NSD/mDNS support)
-- New Feature: Enhanced Service Notification (Reduced noise, added Exit button)
-- Added: Spanish translation 🇪🇸 thanks to @andrecuellar
-- Added: Ukraine translation 🇺🇦 thanks to welshi32
-- Bugfix: Non-Fullscreen View was stretched, touch could be off
-- Bugfix: Wifi with Headunit Server now works with hotspot
-
-## v.1.10.4
-- Added: Dutch translation 🇳🇱 thanks to safariking
-- Several black screen and connection error enhancements
-- Bugfix: Crash in Background if not started as foreground service
-
-## v.1.10.3
-- Bugfix: Force Software Decoder wasn't getting always the sw decoder
-- Added: Russian translation 🇷🇺 thanks to @prostozema
-- Enhancement: Fixing small issues in the video-decoder which should help lower spec devices to render properly (but act a little bit slower perhaps)
-
-## v.1.10.2
-- Bigfix - Button Mapping ignored #71
-- New Feature: Screen-Orientation Feature to lock to a certain orientation (Landscape/Portrait) #69 thanks to @JanRi3D
-- Enhancement: SSL will now attempt multiple times and not break instantly thanks to @MicaelJarniac
-- Added: Chinese(Tradionnal) translation 🇹🇼 thanks to @GazCore
-- Added: Czech translation 🇨🇿 thanks to @teodortomas #75
-- Fixed brazilian portuguese folder name
-
-## v.1.10.1
-- Bugfix: Added missing 3 Byte startcode which stops some devices to start the projection
-- Added PR #68 - Fix Wifi Direct detection thanks to @rakshan-kumr
-- Added PR #67 - Brazilian Portuguese translation 🇧🇷 thanks to @MicaelJarniac
-- Added PR #66 - Add conscrypt to fix error 7 on lower Android versions 🚀, thanks to @JanRi3D
-
-## v.1.10.0
-- New Feature: Portrait Mode Support (Dashboard & Projection) with smart resolution scaling
-- New Feature: Redesigned Keymap Screen (easier configuration)
-- New Feature: Right Hand side driving setting (#63)
-- New Feature: Auto-Connect last session (Thanks to @JanRi3D) (#21)
-- New Feature: Auto-Selfmode if enabled in settings
-- New Feature: Allow sideloaded apps (#57)
-- Localization: Added German Translation 🇩🇪
-- Improvement: TextureView is now the default renderer
-- Improvement: Fixed Dashboard layout rotation
-- Rewrite: Completly Rewrite the Video-Decoder
-
-[... See GitHub for older releases](https://github.com/andreknieriem/headunit-revived)
+- **Auto-Connect Priority:** Redesigned connection logic with reorderable priorities.
+- **USB Stability Tools:** Added a dedicated USB stability check and configurable timeout.
+- **Automation & App Shortcuts:** Native support for App Shortcuts (Connect, Disconnect, Night Mode).
+- **BMW & System Integration:** Registered as a system navigation provider for better vehicle integration.
+- **Localization:** Synchronized and updated all translations.
