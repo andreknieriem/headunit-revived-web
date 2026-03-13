@@ -19,6 +19,11 @@ If you encounter issues while using Headunit Revived, check the following soluti
 ### USB Connection Fails
 - See the [Wired USB Guide](/guides/wired/#troubleshooting-usb) for specific USB tips.
 
+### Wireless Connection Drops Frequently
+If your wireless connection works but drops after a short time, it's usually a phone setting.
+- **Cause:** Features like "WiFi Assistant" or "Switch to mobile data" kill the WiFi connection because the headunit's network has no internet.
+- **Fix:** On your phone, go to **WiFi Settings -> Advanced** and disable **"Switch between networks"**, **"WiFi Assistant"**, or **"Network acceleration"**.
+
 ### Google Maps touch not working (Portrait Mode)
 If you use the app in Portrait Mode and cannot interact with the map (but other buttons work), it's likely a scaling issue.
 - **Fix:** Go to **Settings** -> **DPI** and set a value **below 200** (e.g., 190). Restart the session to apply.
