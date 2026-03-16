@@ -9,6 +9,7 @@ For power users, Headunit Revived supports triggering a wireless connection atte
 Starting with **v1.15.0**, Headunit Revived supports **Static App Shortcuts**.
 - **Connect:** Automatically connects to the last known device.
 - **Disconnect:** Safely ends the current session.
+- **Exit App:** Ends the session, stops background services, and closes the app completely (v2.0.1+).
 - **Mode: Day / Night / Auto:** Directly controls the display theme.
 
 These shortcuts are natively detected by **Samsung Modes & Routines** and can be added as widgets to your home screen.
@@ -21,6 +22,9 @@ These shortcuts are natively detected by **Samsung Modes & Routines** and can be
 ### Disconnect Session
 `headunit://disconnect`
 
+### Exit App
+`headunit://exit`
+
 ### Set Night Mode
 `headunit://nightmode?state=<VALUE>`
 - **Values:** `day`, `night`, `auto` (restores automatic calculation)
@@ -30,6 +34,7 @@ If your automation app prefers standard Intent Actions over URIs, you can use:
 
 - **Connect:** `com.andrerinas.headunitrevived.ACTION_CONNECT`
 - **Disconnect:** `com.andrerinas.headunitrevived.ACTION_DISCONNECT`
+- **Exit App:** `com.andrerinas.headunitrevived.ACTION_STOP_SERVICE`
 - **Night Mode:** `com.andrerinas.headunitrevived.ACTION_SET_NIGHT_MODE`
     - Requires a String extra named `state` with value `day`, `night`, or `auto`.
 
