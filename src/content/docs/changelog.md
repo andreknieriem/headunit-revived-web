@@ -3,6 +3,17 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.2.0.2
+- **FPS Negotiation Fixed:** Resolved an issue where 60FPS settings were never correctly applied.
+- **SSL Handshake Improvement:** Robust fix for truncated SSL messages on jittery connections.
+- **New Visual Themes:** Added **Dark Mode** and **Xtreme Dark Mode** settings for the app itself (thanks to @andrecuellar).
+- **Navigation Compatibility:** Removed redundant app category to ensure hardware NAV buttons correctly recognize the app.
+- **SWC Refinement:** Fixed multiple button events and double/triple skip issues for steering wheel controls.
+- **USB Permission Logic:** Improved permission request flow to prevent 'connection null' errors (thanks to @Bastel2020).
+- **Video Scaling:** Added a setting to **Disable stretch to fit**, fixing distorted rendering on specific displays (thanks to @tsabaia).
+- **Legacy UI Fix:** Improved touch screen accuracy when not in full-screen mode on older Android devices.
+- **Dashboard Layout:** Fixed oversized icon-buttons on ultra-wide screens with small DPI.
+
 ## v.2.0.1
 - **Fixed Android Auto 16.4 Compatibility:** Full support for the latest Android Auto updates (Intent/Receiver fix).
 - **Fixed Multiple Volume Sliders:** Resolved an issue on modern devices (e.g. Pixel 9) where multiple volume sliders would appear in the system menu.
