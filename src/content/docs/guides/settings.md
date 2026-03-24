@@ -15,23 +15,37 @@ The fastest way to configure your device. This tool scans your hardware and disp
 ### Language
 Manually select the application language. Headunit Revived supports 13+ languages including English, German, Spanish, French, Italian, Portuguese, and more.
 
-### Night Mode
-Controls the day/night theme of the Android Auto projection.
-*   **Auto (Time):** Uses the system time and last known location to calculate sunset/sunrise.
-*   **Auto (Time + GPS):** Similar to Auto, but waits for a fresh GPS lock before applying changes.
-*   **Light Sensor:** Uses the device's physical ambient light sensor.
-*   **Screen Brightness:** Monitors the system display brightness (useful for headunits that dim with headlights).
-
 ### Wireless Mode
 Defines how the app handles wireless connections.
 *   **Helper Mode (Recommended):** The tablet waits for a trigger from our companion app, **Wireless Helper**. Now supports Wi-Fi Direct (P2P) for even easier connections.
 *   **Auto-Scan:** The tablet actively searches for phones running the AA Headunit Server (Port 5277).
 
 ### Auto-Start & Connectivity
-*   **Auto-Start on Bluetooth (v1.14.0+):** Automatically opens the app when a specific Bluetooth device (e.g., your car) is connected.
-*   **Auto-Connect Priority (v1.15.0+):** Reorder connection methods (Last Session, USB, Self-Mode) via drag-and-drop.
-*   **Auto-Connect Single USB:** Automatically connects if only one compatible USB device is found.
+*   **Auto-Connect Priority:** Reorder connection methods via drag-and-drop and enable/disable them individually:
+    *   **Last Session:** Automatically reconnects to the last used device (USB or WiFi).
+    *   **Self-Mode:** Launches local Android Auto simulation.
+    *   **Single USB:** Automatically connects if only one compatible USB device is found.
+*   **Auto-Start on Bluetooth:** Automatically opens the app when a specific Bluetooth device (e.g., your car) is connected.
 *   **Exit on Disconnect (v2.1.0+):** Gracefully closes the app and background service when the phone is disconnected.
+
+## Dark Mode & UI Themes
+
+### Application Theme (UI)
+Choose how the app interface itself looks:
+*   **Clear / Dark / Extreme Dark:** Static themes.
+*   **Auto (Time / GPS):** Switches based on sunrise/sunset calculated from your last location.
+*   **Light Sensor:** Switches based on hardware ambient light. Includes a configurable **Threshold Slider**.
+*   **Screen Brightness:** Monitors system display brightness. Useful for headunits that dim automatically when headlights are turned on.
+*   **Manual Time:** Set specific start and end times for the theme switch.
+
+### Visual Customization
+*   **Monochrome Icons:** Switches app icons to a simplified black and white style.
+*   **Extreme Dark Mode:** Forces a pitch-black background (perfect for OLED screens) for automatic modes.
+*   **Gradient Background:** Enables a subtle gradient effect on menus (Disabled when Extreme Dark is active).
+
+### Android Auto Night Mode
+Controls the theme of the projected Android Auto interface. It supports the same modes as the App Theme (Auto, Sensor, Brightness, Manual).
+*   **AA Monochrome (v2.0.0+):** Desaturates the colors of the Android Auto projection during night mode to reduce glare while driving. Features a **Desaturation Level** slider (0% to 100%).
 
 ## Navigation & System Integration
 
@@ -53,28 +67,22 @@ Choose how system bars should be handled during projection:
 - **Immersive:** Both bars are hidden. 
 - **Hide Status Bar Only:** Recommended if your headunit buttons overlap with the immersive view.
 
+### Stretch to Fill (v2.1.0+)
+Forces the video projection to fill the entire available screen area, ignoring the original aspect ratio. This is useful for wide or non-standard displays. Requires a session restart.
+
 ### Custom Insets (Margins)
 Manually adjust Top, Bottom, Left, Right margins. **Crucial for fixing UI accessibility on buggy headunits** where system bars overlay the app buttons. Includes a live preview directly in the settings UI.
 
-### Resolution
-Sets the video resolution negotiated with the phone.
-*   **Options:** Auto, 480p, 720p, 1080p, 1440p
-*   **Note:** 1440p requires API 24+ and H.265 support.
-
-### DPI
-Controls the size of icons and text.
-*   **Portrait Fix:** Use a value **below 200** (e.g., 190) if touch controls are unresponsive in vertical mode.
+### Resolution & DPI
+*   **Resolution:** 480p up to 1440p. 
+*   **Note:** 1440p requires H.265 (HEVC) support and a powerful chipset.
+*   **DPI:** Controls the size of icons and text. Set to `0` for automatic detection.
 
 ### Video Codec & Performance
 *   **Codec:** Choose between H.264 (Standard) or H.265 (Better quality). 
 *   **H.265 Optimization (v2.1.0+):** Features enhanced 4MB buffers and VPS/SPS/PPS parsing to eliminate artifacts on high-bitrate 4K-capable hardware.
 *   **FPS Limit:** Toggle between 30 FPS (stable) and 60 FPS (smooth).
-
-### View Mode
-Selects the Android View type for rendering:
-*   **TextureView (Default):** Best compatibility. Fixes distortion issues on Android 4.x.
-*   **SurfaceView:** High performance and battery-efficient.
-*   **GLES20:** Best for legacy headunits (Android 5.0 - 8.1) showing a black screen.
+*   **View Mode:** Select between TextureView (Default), SurfaceView, or GLES20 (Legacy/Hardware fix).
 
 ## Audio & Input Settings
 
