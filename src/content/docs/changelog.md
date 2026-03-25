@@ -3,6 +3,17 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.2.1.0
+- **H.265 Video Optimization:** Eliminated artifacts on high-bitrate and 4K-capable hardware by increasing video buffers to 4MB and implementing full VPS/SPS/PPS NAL unit parsing.
+- **BMW iDrive Support:** Mapped `KEYCODE_ENTER` to `KEYCODE_DPAD_CENTER` in the internal keymap, ensuring full compatibility with iDrive-style controllers.
+- **Clean Exit on Disconnect:** Added a new "Exit on disconnect" setting. Replaced the "brutal" process kill with a graceful shutdown using a global `ExitIntent`.
+- **UI Rescue Mode:** Added a secondary "Save" button at the bottom of the settings list. Insets and Fullscreen modes now save immediately (`settings.commit()`) to help users on buggy headunits where the top toolbar is inaccessible.
+- **Robustness Fixes:** Resolved an infinite log spam issue in the transport layer during disconnects.
+- **Improved Wireless Launch:** Implemented a robust hybrid trigger (Activity + Broadcast) to ensure Android Auto starts reliably on Gearhead 16.4+ (Android 14/15).
+- **UI Refinements:** Fixed invisible navigation arrows in light mode and corrected the "Save" button text color in dark mode.
+- **Localization:** Added "Wi-Fi is disabled" info toast in all 13 supported languages.
+- **Dashboard Scaling:** Increased the maximum width of the home screen layout to 1200dp for better appearance on ultra-wide high-resolution displays (e.g., 1920x720).
+
 ## v.2.0.2
 - **FPS Negotiation Fixed:** Resolved an issue where 60FPS settings were never correctly applied.
 - **SSL Handshake Improvement:** Robust fix for truncated SSL messages on jittery connections.
@@ -46,7 +57,7 @@ description: Keep track of the latest changes and improvements in Headunit Reviv
 - **Arabic Language Support:** Added full support for the Arabic language.
 - **Day/Night Mode Intent:** New intent for manually setting maps theme.
 - **Legacy UI Fixes:** Improved fullscreen support on Android 4.1 - 4.4.
-- **System Navigation Provider:** Registered as an official navigation app.
+- **System Navigation Provider:** Registered HURev as an official navigation app.
 - **LegacyOptimizer:** Performance improvements for single-core CPUs.
 
 ## v.1.14.3

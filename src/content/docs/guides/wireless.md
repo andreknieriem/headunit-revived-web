@@ -3,47 +3,56 @@ title: Wireless Connection
 description: Learn how to connect your phone wirelessly to Headunit Revived.
 ---
 
-HeadUnit Revived allows you to connect your phone wirelessly via WiFi. In **Version 1.12.0**, we introduced a **Wireless Mode** selector to make connection management more robust and automatic.
+HeadUnit Revived allows you to connect your phone wirelessly via WiFi. In addition to standard network connections, the app now supports **Wi-Fi Direct (P2P)** for a seamless experience without needing a shared hotspot.
 
 ## Prerequisites
 
 *   **Phone:** Android 10 or higher with Android Auto installed.
 *   **Head Unit (Tablet):** Android 4.1+ device with WiFi.
-*   **Network:** Both devices must be on the same network (Hotspot or WiFi).
+*   **Network Options:**
+    *   **Wi-Fi Direct (P2P):** (v2.0.0+) Best for stability. No hotspot required.
+    *   **Shared WiFi:** Both devices connected to the same external router or mobile hotspot.
 
 ## Connection Modes
 
 ### 1. Helper Mode (Recommended)
-This is the most reliable method. It uses our companion app on your phone to trigger the connection automatically.
+This is the most reliable way to connect. It uses the **Wireless Helper** app on your phone to trigger the connection automatically.
 
-*   **Wireless Helper:** [Google Play Store](https://play.google.com/store/apps/details?id=com.andrerinas.wirelesshelper)
-*   **How to setup:**
-    1. Set **Wireless Mode** to **Helper Mode** in Headunit Revived settings.
-    2. Start the service in the **Wireless Helper** app on your phone.
-    3. The phone will find the headunit and launch Android Auto instantly.
+*   **[Wireless Helper](https://github.com/andreknieriem/wireless-helper)** 
+    *   **Multi-Auto Support (v1.5.0):** Add multiple WiFi SSIDs and multiple P2P device names.
+    *   **Hybrid Trigger:** Reliable launch even on Gearhead 16.4+ (Android 14/15).
+    *   **Zero-Config:** Automatically finds the headunit via NSD or P2P.
+
+**How to setup:**
+1. Set **Wireless Mode** to **Helper Mode** in Headunit Revived settings.
+2. Open the **Wireless Helper** app on your phone and start the service.
+3. The phone finds the tablet and launches Android Auto automatically.
 
 ### 2. Auto-Scan Mode
-The headunit actively searches for phones running the native Android Auto "Headunit Server".
+The headunit actively scans your network for phones running the native Android Auto "Headunit Server".
 
 1. **Phone:** Start the **Headunit Server** in Android Auto Developer Settings.
 2. **Head Unit:** Set **Wireless Mode** to **Auto-Scan Mode**.
 3. Projection will start automatically once the network is detected.
 
 ### 3. Manual Mode
-No background scanning. Useful if you want full control or if you are using specific network tools.
-
-1. Set **Wireless Mode** to **Manual**.
-2. Go to the WiFi dashboard in the app and manually click **Scan** or add an IP.
+Classic manual connection. Tap the **WiFi** button on the dashboard, then click **Scan** or enter the phone's IP manually.
 
 ---
 
 ## Technical Setup: Native Headunit Server
-If you are not using a helper app, you must manually start the server on your phone:
+To use **Auto-Scan** or **Manual Mode**, you must enable the native server on your phone:
 
 1. Open **Android Auto Settings**.
 2. Tap **Version** 10 times to enable Developer Settings.
 3. Click the three dots (top right) -> **Start Headunit Server**.
 
 :::important
-Native mode may fail on some **Phone Hotspots** (10.x.x.x networks). If you encounter timeouts, we highly recommend switching to **Helper Mode**.
+Native mode is often blocked by mobile hotspots. We highly recommend using **Helper Mode** for the best experience.
 :::
+
+## Troubleshooting
+
+*   **H.265 Artifacts:** Ensure you are running **v2.1.0** or newer. We've implemented 4MB video buffers and VPS/SPS/PPS parsing to fix artifacts on high-bitrate hardware.
+*   **Connection Drops:** Use **5GHz WiFi** if possible to ensure enough bandwidth for the video stream.
+*   **Audio Issues:** Enable **Audio Sink** in Settings to hear sound through the tablet.

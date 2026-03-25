@@ -15,6 +15,11 @@ We developed the **Wireless Helper** specifically for Headunit Revived. It is li
 3. **Configure:** In Wireless Helper, grant permissions and optionally select your car's Bluetooth for auto-start.
 4. **Result:** Just start your car, and Android Auto will appear on your tablet automatically.
 
+## v1.5.0: Multi-Auto Support
+The latest version of Wireless Helper introduces support for multiple vehicles and tablets:
+- **Multiple SSIDs:** Add a list of allowed Wi-Fi networks for auto-start.
+- **Multiple P2P Names:** If you use different tablets in different cars, you can now enter multiple target names for Wi-Fi Direct.
+
 ## Wi-Fi Direct Auto-Connect (P2P)
 
 Wi-Fi Direct is the most powerful connection method because it doesn't require a shared Wi-Fi network or a manual hotspot. The app can automatically find your tablet and establish a high-speed peer-to-peer connection.
@@ -30,8 +35,8 @@ Android assigns a unique name to every device for Wi-Fi Direct. You need this na
 - On your **Phone**:
     - Open the **Wireless Helper** app.
     - Set the **Connection Mode** to **Wi-Fi Direct**.
-    - Click on **Wi-Fi Direct Device Name** and enter the name you found in step 1.
-    - *Tip:* You only need to enter a part of the name (e.g., `Android`) if it's unique enough.
+    - Click on **Wi-Fi Direct Device Names** and add the name you found in step 1.
+    - *Tip:* The default name is `HURev`. You only need to enter a part of the name (e.g., `Android`) if it's unique enough.
 
 ### 3. Initial Manual Pairing (Crucial)
 For security, Android requires you to manually accept the first connection request between two devices.
