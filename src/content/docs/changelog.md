@@ -3,6 +3,13 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.2.1.1
+- **Hotspot Support:** Added "Enable Hotspot" option for devices where manual hotspot activation is preferred. (Note: Compatibility varies by device, especially on Android 13+).
+- **Fake VPN Handler:** Implemented a workaround for newer Android Auto versions in offline mode to ensure reliable connections without active internet.
+- **Audio Focus Enhancement:** Improved audio focus logic to resolve issues where sound wouldn't correctly route to the headunit/tablet.
+- **Auto-Boot:** Added functionality to automatically start the app on device boot (thanks to @andrecuellar).
+- **Legacy Support:** Fixed a layout crash occurring on older Android 4.2 devices.
+
 ## v.2.1.0
 - **H.265 Video Optimization:** Eliminated artifacts on high-bitrate and 4K-capable hardware by increasing video buffers to 4MB and implementing full VPS/SPS/PPS NAL unit parsing.
 - **BMW iDrive Support:** Mapped `KEYCODE_ENTER` to `KEYCODE_DPAD_CENTER` in the internal keymap, ensuring full compatibility with iDrive-style controllers.
