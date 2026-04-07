@@ -51,7 +51,7 @@ adb shell am start -a android.intent.action.VIEW -d "headunit://connect?ip=192.1
 ```bash
 # Force night mode
 adb shell am start -a android.intent.action.VIEW -d "headunit://nightmode?state=night"
-```,old_string:
+```
 
 ### Automation Apps
 Use the "Open Link" or "Send Intent" action in your preferred automation app with the URI scheme above. Ensure you replace `<PHONE_IP>` with the actual static IP of your phone.
