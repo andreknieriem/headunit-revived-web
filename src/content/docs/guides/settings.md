@@ -13,12 +13,16 @@ The fastest way to configure your device. This tool scans your hardware and disp
 - **Wizard steps:** Select your approximate display size and preferred orientation.
 
 ### Language
-Manually select the application language. Headunit Revived supports 13+ languages including English, German, Spanish, French, Italian, Portuguese, and more.
+Manually select the application language. Headunit Revived supports 15+ languages including English, German, Spanish, French, Italian, Portuguese, and more.
 
-### Wireless Mode
+### Wireless Mode (v2.2.0+)
 Defines how the app handles wireless connections.
-*   **Helper Mode (Recommended):** The tablet waits for a trigger from our companion app, **Wireless Helper**. Now supports Wi-Fi Direct (P2P) for even easier connections.
-*   **Auto-Scan:** The tablet actively searches for phones running the AA Headunit Server (Port 5277).
+*   **Helper Mode (Recommended):** The tablet waits for a trigger from our companion app, **Wireless Helper**. Supports multiple strategies including Wi-Fi Direct (P2P), Shared Wi-Fi, and Google Nearby (Beta).
+*   **Native AA (Beta):** Implements the official Android Auto Wireless protocol. Allows phones to find the tablet directly in the Android Auto settings without a helper app.
+*   **Headunit Server:** 
+    *   **Manual:** You must manually start the server on the phone.
+    *   **Auto:** Tablet actively searches for phones running the AA Headunit Server (Port 5277).
+    *   **Auto-Enable Hotspot:** (Experimental) Automatically enables the tablet's hotspot when searching in Auto mode.
 
 ### Auto-Start & Connectivity
 *   **Auto-Connect Priority:** Reorder connection methods via drag-and-drop and enable/disable them individually:
@@ -26,7 +30,7 @@ Defines how the app handles wireless connections.
     *   **Self-Mode:** Launches local Android Auto simulation.
     *   **Single USB:** Automatically connects if only one compatible USB device is found.
 *   **Auto-Start on Bluetooth:** Automatically opens the app when a specific Bluetooth device (e.g., your car) is connected.
-*   **Exit on Disconnect (v2.1.0+):** Gracefully closes the app and background service when the phone is disconnected.
+*   **Kill on Disconnect (v2.2.0+):** Gracefully closes the app and background service when the phone is disconnected. Prevents battery drain when not in use.
 
 ## Dark Mode & UI Themes
 
@@ -47,17 +51,16 @@ Choose how the app interface itself looks:
 Controls the theme of the projected Android Auto interface. It supports the same modes as the App Theme (Auto, Sensor, Brightness, Manual).
 *   **AA Monochrome (v2.0.0+):** Desaturates the colors of the Android Auto projection during night mode to reduce glare while driving. Features a **Desaturation Level** slider (0% to 100%).
 
-## Navigation & System Integration
+## Navigation & Safety
 
 ### GPS for Navigation
-*   **Type:** Toggle
-*   **Description:** If enabled, the tablet's GPS data is shared with the phone to improve navigation accuracy and save phone battery.
+If enabled, the tablet's GPS data is shared with the phone to improve navigation accuracy and save phone battery.
 
 ### Navigation Provider (v1.15.0+)
-Headunit Revived registers as a system-wide navigation app (`category: maps`). This allows it to:
-*   Be recognized by vehicle systems (like BMW iDrive) as the primary nav app.
-*   Receive `NAVIGATE` intents from other apps (Google Maps, Yandex).
-*   Display directions in native instrument clusters or HUDs (if supported by vehicle hardware).
+Headunit Revived registers as a system-wide navigation app (`category: maps`). This allows it to be recognized by vehicle systems (like BMW iDrive) as the primary nav app and display directions in native instrument clusters or HUDs.
+
+### Fake Speed (v2.2.0+)
+If enabled, the app reports a static speed of 10 km/h to the phone. This bypasses "Video Lock" or "Safety Lock" restrictions in many Android Auto apps (like YouTube or video players) while driving.
 
 ## Graphic & Video Settings
 
@@ -66,23 +69,27 @@ Choose how system bars should be handled during projection:
 - **Normal:** Both status and navigation bars remain visible.
 - **Immersive:** Both bars are hidden. 
 - **Hide Status Bar Only:** Recommended if your headunit buttons overlap with the immersive view.
+- **Immersive (Avoid Notch):** Special mode for modern devices with hole-punch or notch cameras.
 
 ### Stretch to Fill (v2.1.0+)
-Forces the video projection to fill the entire available screen area, ignoring the original aspect ratio. This is useful for wide or non-standard displays. Requires a session restart.
+Forces the video projection to fill the entire available screen area, ignoring the original aspect ratio. Requires a session restart.
+
+### Forced Scale (v2.2.0+)
+(SurfaceView only) Manually forces the scaling logic to use the provided dimensions. Useful for displays with non-standard hardware scaling.
 
 ### Custom Insets (Margins)
-Manually adjust Top, Bottom, Left, Right margins. **Crucial for fixing UI accessibility on buggy headunits** where system bars overlay the app buttons. Includes a live preview directly in the settings UI.
+Manually adjust Top, Bottom, Left, Right margins (0 to 500px). **Crucial for buggy headunits** where system bars overlay the app buttons. Includes a live preview directly in the settings UI.
 
 ### Resolution & DPI
-*   **Resolution:** 480p up to 1440p. 
-*   **Note:** 1440p requires H.265 (HEVC) support and a powerful chipset.
+*   **Resolution:** 480p up to **2160p (4K)**.
+*   **Note:** 1440p+ requires H.265 (HEVC) support and a powerful chipset.
 *   **DPI:** Controls the size of icons and text. Set to `0` for automatic detection.
 
 ### Video Codec & Performance
-*   **Codec:** Choose between H.264 (Standard) or H.265 (Better quality). 
+*   **Codec:** Choose between Auto, H.264 (Standard), or H.265 (Better quality). 
 *   **H.265 Optimization (v2.1.0+):** Features enhanced 4MB buffers and VPS/SPS/PPS parsing to eliminate artifacts on high-bitrate 4K-capable hardware.
 *   **FPS Limit:** Toggle between 30 FPS (stable) and 60 FPS (smooth).
-*   **View Mode:** Select between TextureView (Default), SurfaceView, or GLES20 (Legacy/Hardware fix).
+*   **View Mode:** Select between SurfaceView (Efficient, Default), TextureView (Flexible), or GLES20 (Legacy/Hardware fix).
 
 ## Audio & Input Settings
 
@@ -92,20 +99,41 @@ If enabled, the Head Unit acts as a speaker. Disable if you want the phone to ha
 ### Audio Volume Offsets (v1.14.0+)
 Provides separate volume gain controls (0% to 200%) for **Media**, **Assistant**, and **Navigation** streams using vertical sliders.
 
+### Audio Latency & Stability (v2.2.0+)
+*   **Audio Latency Multiplier:** Adjusts the internal audio buffer size. 
+    *   **Lower (1x-2x):** Less lag, better for voice commands.
+    *   **Higher (4x-8x):** Less stuttering on unstable WiFi connections.
+*   **Audio Queue Capacity:** Limits the number of audio chunks waiting to be processed. Prevents audio from drifting further behind when the network is slow (Backpressure).
+
 ### Microphone Input
-*   **Input Source:** Default, Microphone, Voice Recognition, or **Voice Communication** (Recommended for Hardware Echo Cancellation).
+*   **Input Source:** Default, Microphone, Voice Recognition, or **Voice Communication** (Recommended for Hardware Echo Cancellation). Supports **Bluetooth SCO** for external mics.
 *   **Sample Rate:** 16kHz (Standard) up to 48kHz.
 *   **Use AAC Audio:** (Experimental) Requests AAC compressed audio to save WiFi bandwidth.
 
-### Keymap
-The Keymap screen allows you to map steering wheel buttons or knobs to Android Auto commands.
-*   **BMW iDrive Fix (v2.1.0+):** The `ENTER` key is now automatically mapped to `DPAD_CENTER` for full controller compatibility.
+### Input Controls
+*   **Keymap:** Map physical keys (steering wheel, knobs) to AA commands. Supports 17+ proprietary steering wheel protocols.
+*   **Enable Rotary:** Enables support for iDrive-style rotary controllers and trackpads.
+
+## Exit & PiP (v2.2.0+)
+
+### Picture-in-Picture (PiP)
+Fully supported for Android 8.0+. Allows you to keep Android Auto visible in a small window while using other apps (like the original car radio or a map app).
+
+### Multi-Option Exit Dialog
+Triggered via the back button or a **2-finger edge gesture** (swipe from left). Offers quick access to:
+*   **Stop Connection**
+*   **Enter PiP**
+*   **Move to Background**
 
 ## Debug Settings
 
 ### Logging System
 *   **Log Level:** Adjust verbosity (Info, Debug, Verbose).
+*   **Log Capture:** Real-time capture of system and AAP logs.
 *   **Export Logs:** Save logs to a public folder to share with developers for troubleshooting.
+
+### Show FPS Counter
+Displays a real-time overlay with current FPS, bitrate, and decoder latency.
 
 ### Use Native SSL
 Uses native OpenSSL (via JNI) for encryption. Mandatory for Android 15 and highly recommended for performance on older chipsets. 

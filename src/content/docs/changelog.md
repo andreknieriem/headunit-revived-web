@@ -3,6 +3,23 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.2.2.0
+- Added: Native AA. 🎉  Warning! This will only work on a limited amount of headunits! Most Android devices do not support connecting 2 Android devices via Bluetooth which is essential for this to work.
+- Added: Google Nearby Support as connection method. Needs Wireless Helper 1.6.0 or later
+- Added: Pip-Support
+- Added: 4K in select
+- Try to fix connection problems on WiFi
+- Added: Intent and routine for starting the app directly to self mode
+- Added: Force Scale Option for older devices on surface view
+- Added: New Immersive Fullscreen with avoided notch area. This should fix problems for eg. Pixel Phones
+- Enhanced: Video Decoder Error Handling
+- Added: 2 new WiFi-Options for a WiFi-Direct. Thanks to @andrecuellar
+- Added Japanese language 🇯🇵 thanks to @mattyann87
+- Enhanced: Media Session Announcement. Thanks to @irwanrhmn
+- New App-Icon without text for better visibility
+- Fixed: USB modal appearing for non-Android Auto devices thanks to @andrecuellar
+- Added: Create configurable audio queue and audio buffer in settings thanks to @irwanrhmn
+
 ## v.2.1.1
 - **Hotspot Support:** Added "Enable Hotspot" option for devices where manual hotspot activation is preferred. (Note: Compatibility varies by device, especially on Android 13+).
 - **Fake VPN Handler:** Implemented a workaround for newer Android Auto versions in offline mode to ensure reliable connections without active internet.
