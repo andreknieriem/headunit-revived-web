@@ -105,6 +105,9 @@ Provides separate volume gain controls (0% to 200%) for **Media**, **Assistant**
     *   **Higher (4x-8x):** Less stuttering on unstable WiFi connections.
 *   **Audio Queue Capacity:** Limits the number of audio chunks waiting to be processed. Prevents audio from drifting further behind when the network is slow (Backpressure).
 
+### Media Integration (v2.2.0+)
+*   **Sync Media Session AA Metadata:** Mirrors the phone's "Now Playing" information (Title, Artist, Duration, Album Art) to the tablet's system media session and media notification. Useful for showing current track info on system dashboards or lock screens.
+
 ### Microphone Input
 *   **Input Source:** Default, Microphone, Voice Recognition, or **Voice Communication** (Recommended for Hardware Echo Cancellation). Supports **Bluetooth SCO** for external mics.
 *   **Sample Rate:** 16kHz (Standard) up to 48kHz.

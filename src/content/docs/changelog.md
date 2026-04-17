@@ -3,6 +3,16 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.2.2.1
+- **USB Stability:** Fixed a fatal error in USB connections introduced in 2.2.0. This is a critical hotfix for wired users.
+- **Native Wireless Reconnection:** Implemented a non-blocking, event-driven handshake logic. Pokes (wake-up signals) are now precisely timed to fire only after Wi-Fi credentials are ready, ensuring the phone connects reliably every time.
+- **Google Nearby Support:** Added auto-connect support for Google Nearby mode.
+- **UI & Task Handling:** Resolved a bug where the app would appear twice in the "Recent Apps" launcher / App-Drawer.
+- **Automation:** Fixed issues with routines and intents (e.g., `headunit://connect`) not working correctly.
+- **Self Mode Fix:** Added specific error messages for Android 10 and below when attempting to use self-mode.
+- **Improved Scaling:** Implemented a new approach for scaling and touch event processing to prevent visual and touch offsets.
+- **Localization:** Added translations for USB permission error dialogs in all 15+ supported languages.
+
 ## v.2.2.0
 - Added: Native AA. 🎉  Warning! This will only work on a limited amount of headunits! Most Android devices do not support connecting 2 Android devices via Bluetooth which is essential for this to work.
 - Added: Google Nearby Support as connection method. Needs Wireless Helper 1.6.0 or later
