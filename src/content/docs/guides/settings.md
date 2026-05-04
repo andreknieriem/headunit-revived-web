@@ -23,6 +23,7 @@ Defines how the app handles wireless connections.
     *   **Manual:** You must manually start the server on the phone.
     *   **Auto:** Tablet actively searches for phones running the AA Headunit Server (Port 5277).
     *   **Auto-Enable Hotspot:** (Experimental) Automatically enables the tablet's hotspot when searching in Auto mode.
+*   **Listen for USB Devices (v2.2.2+):** Toggles the Android system USB permission prompt. Decoupled from Auto-Start to prevent annoying popups for non-AA devices while allowing reliable detection of phones.
 
 ### Auto-Start & Connectivity
 *   **Auto-Connect Priority:** Reorder connection methods via drag-and-drop and enable/disable them individually:
@@ -86,8 +87,8 @@ Manually adjust Top, Bottom, Left, Right margins (0 to 500px). **Crucial for bug
 *   **DPI:** Controls the size of icons and text. Set to `0` for automatic detection.
 
 ### Video Codec & Performance
-*   **Codec:** Choose between Auto, H.264 (Standard), or H.265 (Better quality). 
-*   **H.265 Optimization (v2.1.0+):** Features enhanced 4MB buffers and VPS/SPS/PPS parsing to eliminate artifacts on high-bitrate 4K-capable hardware.
+*   **Video Codec:** Auto, H.264 (Standard), or H.265 (Better quality). 
+*   **H.265 Optimization:** Features dynamic buffer sizing (2MB for <=1080p, 8MB for 4K) to prevent crashes on Allwinner/Rockchip chipsets while maintaining 4K performance.
 *   **FPS Limit:** Toggle between 30 FPS (stable) and 60 FPS (smooth).
 *   **View Mode:** Select between SurfaceView (Efficient, Default), TextureView (Flexible), or GLES20 (Legacy/Hardware fix).
 
@@ -96,8 +97,9 @@ Manually adjust Top, Bottom, Left, Right margins (0 to 500px). **Crucial for bug
 ### Enable Audio Sink
 If enabled, the Head Unit acts as a speaker. Disable if you want the phone to handle audio output directly (e.g., via Bluetooth to the car speakers).
 
-### Audio Volume Offsets (v1.14.0+)
-Provides separate volume gain controls (0% to 200%) for **Media**, **Assistant**, and **Navigation** streams using vertical sliders.
+### Audio Volume & Streams (v2.2.2+)
+*   **Separate Audio Streams:** If enabled, the app uses independent Android audio streams for Media, Assistant, and Navigation.
+*   **Volume Offsets:** Separate volume gain controls (0% to 200%) for each stream using vertical sliders.
 
 ### Audio Latency & Stability (v2.2.0+)
 *   **Audio Latency Multiplier:** Adjusts the internal audio buffer size. 
@@ -109,9 +111,10 @@ Provides separate volume gain controls (0% to 200%) for **Media**, **Assistant**
 *   **Sync Media Session AA Metadata:** Mirrors the phone's "Now Playing" information (Title, Artist, Duration, Album Art) to the tablet's system media session and media notification. Useful for showing current track info on system dashboards or lock screens.
 
 ### Microphone Input
-*   **Input Source:** Default, Microphone, Voice Recognition, or **Voice Communication** (Recommended for Hardware Echo Cancellation). Supports **Bluetooth SCO** for external mics.
-*   **Sample Rate:** 16kHz (Standard) up to 48kHz.
-*   **Use AAC Audio:** (Experimental) Requests AAC compressed audio to save WiFi bandwidth.
+*   **Input Source:** Default, Microphone, Voice Recognition, or **Voice Communication** (Recommended for Echo Cancellation). Supports **Bluetooth SCO** for external mics.
+*   **Voice Processing (v2.2.2+):** Supports hardware-level **Noise Suppression**, **Automatic Gain Control**, and **Acoustic Echo Cancellation** (AEC).
+*   **Sample Rate:** 16kHz up to 48kHz.
+*   **Use AAC Audio:** (Experimental) Uses compressed audio to save WiFi bandwidth.
 
 ### Input Controls
 *   **Keymap:** Map physical keys (steering wheel, knobs) to AA commands. Supports 17+ proprietary steering wheel protocols.

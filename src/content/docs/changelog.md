@@ -2,6 +2,15 @@
 title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
+ 
+## v.2.2.2
+- **Audio Routing:** Added support for **Separate Audio Streams**. This allows independent volume control for Media, Assistant, and Navigation.
+- **USB Stability:** Fixed an issue where the Android USB system prompt wouldn't appear. The prompt is now decoupled from Auto-Start behavior and can be toggled via the "Listen for USB Devices" setting.
+- **Voice Quality:** Extended microphone debugging and added support for **NoiseSuppressor**, **AutomaticGainControl**, and **AcousticEchoCanceler** (hardware-dependent).
+- **Adaptive UI:** Implemented dynamic rescale and UpdateUI logic for devices that report incorrect navigation bar dimensions.
+- **Connectivity:** Fixed exit intent handling and improved steering wheel control compatibility across more devices.
+- **Day/Night Fix:** Resolved a bug in Auto-Night mode affecting users in the UK and other specific timezones.
+- **H.265 Optimization:** Implemented dynamic video buffer sizing (2MB for 1080p, 8MB for 4K) to balance stability and performance.
 
 ## v.2.2.1
 - **USB Stability:** Fixed a fatal error in USB connections introduced in 2.2.0. This is a critical hotfix for wired users.
