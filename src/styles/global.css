@@ -2,79 +2,33 @@
  
 @theme {
   --color-accent: #009688; /* Teal color matching your app */
-  --color-accent-glow: rgba(0, 150, 136, 0.3);
 }
-
-/* Base enhancements */
-:root {
-  --sl-color-accent: var(--color-accent);
-}
-
+ 
 /* Custom Badge next to Hero Title */
 .hero h1 {
   display: inline-block !important;
   position: relative;
-  background: linear-gradient(135deg, #fff 0%, #ccc 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  filter: drop-shadow(0 0 10px rgba(255,255,255,0.1));
 }
-
+ 
 .hero h1::after {
   content: "v2.2.2";
   display: inline-block;
-  background: linear-gradient(135deg, var(--color-accent) 0%, #00796b 100%);
+  background-color: var(--color-accent);
   color: white;
-  font-size: 0.25em; 
-  padding: 0.2rem 0.8rem;
+  font-size: 0.25em; /* Smaller badge font size */
+  padding: 0.1rem 0.6rem;
   border-radius: 9999px;
   vertical-align: middle;
-  margin-left: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
+  margin-left: 0.75rem;
+  font-weight: 600;
+  letter-spacing: normal;
   line-height: 1.5;
+  /* Position it slightly "up" */
   position: relative;
-  top: -15px;
-  box-shadow: 0 0 15px var(--color-accent-glow);
-  border: 1px solid rgba(255,255,255,0.2);
-  text-shadow: none;
-  -webkit-text-fill-color: white; /* Reset for the badge */
+  top: -12px;
 }
-
-/* Glassmorphism for Cards */
-.card {
-  background: rgba(255, 255, 255, 0.03) !important;
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
-}
-
-.card:hover {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border-color: var(--color-accent) !important;
-  transform: translateY(-5px);
-  box-shadow: 0 10px 30px -10px var(--color-accent-glow);
-}
-
-/* Hero Section Enhancement */
+ 
+/* Ensure the title container doesn't cut off the badge */
 .hero {
   overflow: visible;
-  position: relative;
-}
-
-.hero::before {
-  content: "";
-  position: absolute;
-  top: -20%;
-  left: -10%;
-  width: 40%;
-  height: 60%;
-  background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
-  z-index: -1;
-  pointer-events: none;
-}
-
-/* Ensure smooth scrolling */
-html {
-  scroll-behavior: smooth;
 }
