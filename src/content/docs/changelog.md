@@ -3,6 +3,18 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
  
+## v.2.3.0
+- **Static Audio Focus & Software Ducking:** Added a setting to suppress system-level audio focus requests (ideal for devices where system FM Radio should play concurrently) and implemented software-based media volume ducking (by 60%) when navigation instructions play.
+- **Orientation Normalization:** Fixed visual stretching, green/distorted rendering, and split-second handshake failures when starting the app in portrait mode while having a landscape target orientation configured.
+- **Graceful Connection Recovery:** Added robust automatic recovery for wireless drops with an extended 20-second timeout window, showing a "Connection Interrupted" overlay during reconnection.
+- **Automation & Shortcuts:** Restored app shortcuts and Bixby Routines launch behavior by directing static shortcuts to `AutomationActivity` to prevent task-switching flashes and activity duplication.
+- **SDK 16 Stability:** Fixed media session initialization crashes on legacy Android versions (such as Android 4.2.2 API 17).
+- **Overlay & Watchdog Fixes:** Shortened video watchdog to 1.5s for faster recovery and prevented the loading overlay from getting stuck during decoder restarts.
+- **100% Battery USB Workaround:** Added support for automatic reconnection (within 1.5s) when phones detach USB accessory mode upon reaching full charge.
+- **PiP & Gesture Navigation:** Fully supported Picture-in-Picture mode on Android 8.0+ and added a new multi-option exit menu triggered via a 2-finger swipe edge gesture.
+- **Safety Toggles:** Added a "Fake Speed" toggle (enabled by default) to report virtual vehicle speed and bypass system driving video lockouts.
+- **Wireless UI Refresh:** Modernized settings with segmented button selectors for wireless strategies and Nearby modes.
+
 ## v.2.2.2
 - **Audio Routing:** Added support for **Separate Audio Streams**. This allows independent volume control for Media, Assistant, and Navigation.
 - **USB Stability:** Fixed an issue where the Android USB system prompt wouldn't appear. The prompt is now decoupled from Auto-Start behavior and can be toggled via the "Listen for USB Devices" setting.
@@ -10,7 +22,9 @@ description: Keep track of the latest changes and improvements in Headunit Reviv
 - **Adaptive UI:** Implemented dynamic rescale and UpdateUI logic for devices that report incorrect navigation bar dimensions.
 - **Connectivity:** Fixed exit intent handling and improved steering wheel control compatibility across more devices.
 - **Day/Night Fix:** Resolved a bug in Auto-Night mode affecting users in the UK and other specific timezones.
+- **WiFi Auto-Start:** Added "Auto-start on WiFi" setting. Automatically connect when a specific WiFi SSID is detected.
 - **H.265 Optimization:** Implemented dynamic video buffer sizing (2MB for 1080p, 8MB for 4K) to balance stability and performance.
+
 
 ## v.2.2.1
 - **USB Stability:** Fixed a fatal error in USB connections introduced in 2.2.0. This is a critical hotfix for wired users.

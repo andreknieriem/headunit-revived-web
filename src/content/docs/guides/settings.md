@@ -31,7 +31,9 @@ Defines how the app handles wireless connections.
     *   **Self-Mode:** Launches local Android Auto simulation.
     *   **Single USB:** Automatically connects if only one compatible USB device is found.
 *   **Auto-Start on Bluetooth:** Automatically opens the app when a specific Bluetooth device (e.g., your car) is connected.
+*   **Auto-Start on WiFi (v2.2.2+):** Automatically opens the app and attempts to connect when a specific WiFi SSID is detected. Includes a warning for Android 8+ background restrictions.
 *   **Kill on Disconnect (v2.2.0+):** Gracefully closes the app and background service when the phone is disconnected. Prevents battery drain when not in use.
+
 
 ## Dark Mode & UI Themes
 
@@ -100,6 +102,7 @@ If enabled, the Head Unit acts as a speaker. Disable if you want the phone to ha
 ### Audio Volume & Streams (v2.2.2+)
 *   **Separate Audio Streams:** If enabled, the app uses independent Android audio streams for Media, Assistant, and Navigation.
 *   **Volume Offsets:** Separate volume gain controls (0% to 200%) for each stream using vertical sliders.
+*   **Static Audio Focus (v2.3.0+):** If enabled, the app suppresses system-level audio focus requests. This allows external sources (like a vehicle's built-in FM Radio) to play audio concurrently without being muted or interrupted by the app. Includes **Software-based Ducking** which temporarily dims the media volume by 60% when a navigation or assistant prompt plays.
 
 ### Audio Latency & Stability (v2.2.0+)
 *   **Audio Latency Multiplier:** Adjusts the internal audio buffer size. 
