@@ -43,7 +43,7 @@ You can bypass this restriction by starting the built-in Android Auto Headunit S
    - Select **Start head unit server** from the dropdown.
    - A persistent notification will appear in your status bar confirming the server is running.
 3. **Connecting via Wi-Fi Mode in Headunit Revived**
-   - Open Headunit Revived, go to Settings, and make sure your **Wireless Mode** is set to **Manual**.
+   - Open Headunit Revived, go to Settings, and make sure your **Wireless Mode** is set to **Headunit Server**.
    - Go back to the main screen and tap the **Wi-Fi** button.
    - The app will start scanning the network (in this case, your phone's internal loopback address).
    - Select your local Android Auto server from the available connections list to launch the dashboard successfully!
