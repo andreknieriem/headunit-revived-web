@@ -28,6 +28,26 @@ If your wireless connection works but drops after a short time, it's usually a p
 If you use the app in Portrait Mode and cannot interact with the map (but other buttons work), it's likely a scaling issue.
 - **Fix:** Go to **Settings** -> **DPI** and set a value **below 200** (e.g., 190). Restart the session to apply.
 
+### Self-mode on Android 10 (Q) and below
+Google has disabled the automatic wireless projection startup for Android 10 and below in Android Auto versions 16.4 and higher. While Self-mode still works on newer Android versions, it is normally impossible to trigger projection on Android 10 and below directly.
+
+:::tip[Workaround: Connecting via Wi-Fi Loopback]
+You can bypass this restriction by starting the built-in Android Auto Headunit Server on your phone and connecting via Wi-Fi mode in Headunit Revived.
+:::
+
+1. **Enable Android Auto Developer Options**
+   - Open your phone's Settings → Connected devices → Android Auto (or search for "Android Auto" in your settings).
+   - Scroll to the bottom and tap the **Version** section rapidly 10 times to unlock Developer Settings.
+2. **Start the Headunit Server**
+   - Tap the three dots in the top-right corner of the Android Auto settings screen.
+   - Select **Start head unit server** from the dropdown.
+   - A persistent notification will appear in your status bar confirming the server is running.
+3. **Connecting via Wi-Fi Mode in Headunit Revived**
+   - Open Headunit Revived, go to Settings, and make sure your **Wireless Mode** is set to **Manual**.
+   - Go back to the main screen and tap the **Wi-Fi** button.
+   - The app will start scanning the network (in this case, your phone's internal loopback address).
+   - Select your local Android Auto server from the available connections list to launch the dashboard successfully!
+
 ## Still having trouble?
 
 - **GitHub Issues:** [Report a bug](https://github.com/andreknieriem/headunit-revived/issues)
