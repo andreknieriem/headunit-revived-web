@@ -3,6 +3,17 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
  
+## v.2.3.1
+- **Audio Mixer & Static Audio Focus Fixes:** Added a software-based Audio Mixer to mix multiple audio streams (media, navigation, assistant) into a single stream, resolving volume routing issues and muting bugs on Chinese head units.
+- **Cellular/WiFi Handover:** Fixed connection drops at cellular/WiFi borders by binding sockets to the WiFi network interface when available.
+- **Samsung Compatibility:** Fixed issues with Samsung Modes & Routines shortcuts.
+- **Orientation Handling:** Fixed wrong initial display orientation when launching the app while holding the phone at an angle.
+- **AAWireless Compatibility:** Fixed USB connection errors on AAWireless dongles.
+- **Bluetooth Multi-Device:** Added support for auto-starting connection on multiple Bluetooth devices.
+- **Mic Routing Fix:** Corrected microphone input source mapping issues.
+- **Vietnamese Language:** Added Vietnamese translation 🇻🇳.
+- **Back Key Mapping:** Integrated back key routing and keymap support.
+
 ## v.2.3.0
 - **Static Audio Focus & Software Ducking:** Added a setting to suppress system-level audio focus requests (ideal for devices where system FM Radio should play concurrently) and implemented software-based media volume ducking (by 60%) when navigation instructions play.
 - **Orientation Normalization:** Fixed visual stretching, green/distorted rendering, and split-second handshake failures when starting the app in portrait mode while having a landscape target orientation configured.

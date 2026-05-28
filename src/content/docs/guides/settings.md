@@ -103,6 +103,7 @@ If enabled, the Head Unit acts as a speaker. Disable if you want the phone to ha
 *   **Separate Audio Streams:** If enabled, the app uses independent Android audio streams for Media, Assistant, and Navigation.
 *   **Volume Offsets:** Separate volume gain controls (0% to 200%) for each stream using vertical sliders.
 *   **Static Audio Focus (v2.3.0+):** If enabled, the app suppresses system-level audio focus requests. This allows external sources (like a vehicle's built-in FM Radio) to play audio concurrently without being muted or interrupted by the app. Includes **Software-based Ducking** which temporarily dims the media volume by 60% when a navigation or assistant prompt plays.
+*   **Audio Mixer (v2.3.1+):** Automatically mixes media, navigation, and assistant audio channels in software when Static Audio Focus is enabled, preventing system-level audio routing conflicts on Chinese head units.
 
 ### Audio Latency & Stability (v2.2.0+)
 *   **Audio Latency Multiplier:** Adjusts the internal audio buffer size. 
