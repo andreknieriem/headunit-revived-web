@@ -18,12 +18,14 @@ Manually select the application language. Headunit Revived supports 15+ language
 ### Wireless Mode (v2.2.0+)
 Defines how the app handles wireless connections.
 *   **Helper Mode (Recommended):** The tablet waits for a trigger from our companion app, **Wireless Helper**. Supports multiple strategies including Wi-Fi Direct (P2P), Shared Wi-Fi, and Google Nearby (Beta).
+    *   **Configure Wireless Helper QR (v3.0.0+):** Generates and displays a QR code containing the tablet's active Hotspot credentials. Scan this QR code using the companion Wireless Helper app on your phone for instant, automatic configuration.
 *   **Native AA (Beta):** Implements the official Android Auto Wireless protocol. Allows phones to find the tablet directly in the Android Auto settings without a helper app.
 *   **Headunit Server:** 
     *   **Manual:** You must manually start the server on the phone.
     *   **Auto:** Tablet actively searches for phones running the AA Headunit Server (Port 5277).
     *   **Auto-Enable Hotspot:** (Experimental) Automatically enables the tablet's hotspot when searching in Auto mode.
 *   **Listen for USB Devices (v2.2.2+):** Toggles the Android system USB permission prompt. Decoupled from Auto-Start to prevent annoying popups for non-AA devices while allowing reliable detection of phones.
+    *   **USB Whitelisting (v3.0.0+):** Automatically ignores Apple devices (Vendor ID `0x05AC` / iPhones) and other incompatible USB peripherals to prevent interruptions during connection setup.
 
 ### Auto-Start & Connectivity
 *   **Auto-Connect Priority:** Reorder connection methods via drag-and-drop and enable/disable them individually:
@@ -34,6 +36,12 @@ Defines how the app handles wireless connections.
 *   **Auto-Start on WiFi (v2.2.2+):** Automatically opens the app and attempts to connect when a specific WiFi SSID is detected. Includes a warning for Android 8+ background restrictions.
 *   **Kill on Disconnect (v2.2.0+):** Gracefully closes the app and background service when the phone is disconnected. Prevents battery drain when not in use.
 
+### Backup & Reset (v3.0.0+)
+Allows you to backup, restore, or clear your application settings configuration:
+*   **Export Settings:** Exports your current configuration to a JSON file in your device's storage.
+*   **Import Settings:** Restores configurations from a previously exported JSON file. (Note: Restoring settings that impact the video or audio projection layer will automatically trigger a session restart).
+*   **Reset Settings:** Clears all custom configurations, cached data, and auto-connection states, reverting the app to factory defaults.
+
 
 ## Dark Mode & UI Themes
 
@@ -43,6 +51,7 @@ Choose how the app interface itself looks:
 *   **Auto (Time / GPS):** Switches based on sunrise/sunset calculated from your last location.
 *   **Light Sensor:** Switches based on hardware ambient light. Includes a configurable **Threshold Slider**.
 *   **Screen Brightness:** Monitors system display brightness. Useful for headunits that dim automatically when headlights are turned on.
+*   **Car Headlight Signal (ILL+) (v3.0.0+):** Switches between day/night theme automatically based on the vehicle headlight signal state (receives a binary illumination signal from the car's hardware integration).
 *   **Manual Time:** Set specific start and end times for the theme switch.
 
 ### Visual Customization
@@ -51,7 +60,7 @@ Choose how the app interface itself looks:
 *   **Gradient Background:** Enables a subtle gradient effect on menus (Disabled when Extreme Dark is active).
 
 ### Android Auto Night Mode
-Controls the theme of the projected Android Auto interface. It supports the same modes as the App Theme (Auto, Sensor, Brightness, Manual).
+Controls the theme of the projected Android Auto interface. It supports the same modes as the App Theme (Auto, Sensor, Brightness, Headlight Signal (ILL+), Manual).
 *   **AA Monochrome (v2.0.0+):** Desaturates the colors of the Android Auto projection during night mode to reduce glare while driving. Features a **Desaturation Level** slider (0% to 100%).
 
 ## Navigation & Safety
@@ -82,6 +91,13 @@ Forces the video projection to fill the entire available screen area, ignoring t
 
 ### Custom Insets (Margins)
 Manually adjust Top, Bottom, Left, Right margins (0 to 500px). **Crucial for buggy headunits** where system bars overlay the app buttons. Includes a live preview directly in the settings UI.
+
+### Custom Loading Screen (v3.0.0+)
+Customize the loading screen that appears while Android Auto is initializing:
+- **Media Path:** Select a custom image, GIF, or video file from your device.
+- **Show Loading Text:** Toggle the visibility of the initialization progress text.
+- **Keep Aspect Ratio:** Force the selected media to preserve its native aspect ratio instead of stretching.
+- **Loop Video:** (If video selected) Continuously loops the video while loading.
 
 ### Resolution & DPI
 *   **Resolution:** 480p up to **2160p (4K)**.
@@ -139,6 +155,9 @@ Triggered via the back button or a **2-finger edge gesture** (swipe from left). 
 
 ### Logging System
 *   **Log Level:** Adjust verbosity (Info, Debug, Verbose).
+*   **Log Source (v3.0.0+):** Choose the backend source for logs:
+    *   **Logcat:** Standard Android system log buffer. Requires setting up ADB permissions on newer Android versions.
+    *   **Direct File:** Writes application events directly to a log file. Bypasses logcat permission checks, enabling hassle-free logging on modern Android versions.
 *   **Log Capture:** Real-time capture of system and AAP logs.
 *   **Export Logs:** Save logs to a public folder to share with developers for troubleshooting.
 

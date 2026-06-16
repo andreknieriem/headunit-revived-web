@@ -2,7 +2,21 @@
 title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
- 
+
+## v.3.0.0
+- **Custom Loading Screen:** Added support for setting a custom image, GIF, or video background to display while Android Auto is initializing.
+- **Settings Backup & Reset:** Added complete export, import, and factory reset functionality for all configuration options.
+- **Removed Legacy SSL:** Removed old deprecated C-based SSL libraries to improve security, maintenance, and reduce the overall APK file size.
+- **Direct File Logging:** Added support for writing logs directly to a file (APPLOG_FILE) to bypass Android logcat permission restrictions on newer Android versions.
+- **USB Disconnect Buffer:** USB connection is kept alive for 8 seconds to survive short USB dongle reboots or disconnects.
+- **Car Headlight Signal (ILL+):** Implemented vehicle headlight signal integration for automatic day/night theme management.
+- **USB Device Whitelisting:** Automatically ignores Apple devices (Vendor ID `0x05AC` / iPhones) and other incompatible USB peripherals to prevent connection interruptions.
+- **QR Code Companion Setup:** Added a QR code generator for easy pairing and automatic setup of the companion **Wireless Helper** app.
+- **Full-Screen Edge Gesture:** Added a two-finger swipe gesture from the right side to easily toggle between fullscreen mode and standard navigation bar mode.
+- **Controls & Keymapping:** Mapped the Navigation Button key and resolved steering wheel auto-connect conflicts dragging the session into wireless flow during active USB connections.
+- **Audio Stuttering Fixes:** Resolved audio stutter issues on some specific chipsets since v2.1.1.
+- **Google Nearby Enhancements:** Optimized Nearby connections to prevent low video frame rate (0-2 FPS) issues.
+
 ## v.2.3.1
 - **Audio Mixer & Static Audio Focus Fixes:** Added a software-based Audio Mixer to mix multiple audio streams (media, navigation, assistant) into a single stream, resolving volume routing issues and muting bugs on Chinese head units.
 - **Cellular/WiFi Handover:** Fixed connection drops at cellular/WiFi borders by binding sockets to the WiFi network interface when available.
