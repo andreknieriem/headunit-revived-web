@@ -26,6 +26,7 @@ Defines how the app handles wireless connections.
     *   **Auto-Enable Hotspot:** (Experimental) Automatically enables the tablet's hotspot when searching in Auto mode.
 *   **Listen for USB Devices (v2.2.2+):** Toggles the Android system USB permission prompt. Decoupled from Auto-Start to prevent annoying popups for non-AA devices while allowing reliable detection of phones.
     *   **USB Whitelisting (v3.0.0+):** Automatically ignores Apple devices (Vendor ID `0x05AC` / iPhones) and other incompatible USB peripherals to prevent interruptions during connection setup.
+*   **Use Native USB Driver (v3.1.0+):** Uses the `libusb` native library directly for USB communication instead of the standard Android OS USB accessory stack. This resolves connection instability and random USB disconnects on specific head units and cables. Disable it to fallback to the default Android USB API.
 
 ### Auto-Start & Connectivity
 *   **Auto-Connect Priority:** Reorder connection methods via drag-and-drop and enable/disable them individually:
@@ -97,6 +98,7 @@ Customize the loading screen that appears while Android Auto is initializing:
 - **Media Path:** Select a custom image, GIF, or video file from your device.
 - **Show Loading Text:** Toggle the visibility of the initialization progress text.
 - **Keep Aspect Ratio:** Force the selected media to preserve its native aspect ratio instead of stretching.
+- **Scale (v3.1.0+):** Adjust the size/scaling of the loading screen media using a custom scale slider (e.g., to adjust the image or video to fit perfectly on different screens).
 - **Loop Video:** (If video selected) Continuously loops the video while loading.
 
 ### Resolution & DPI

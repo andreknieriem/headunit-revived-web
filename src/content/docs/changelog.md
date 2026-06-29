@@ -3,6 +3,11 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.3.1.0
+- **Libusb Native USB Support:** Added a high-performance native USB stack wrapper using `libusb` as a selectable alternative to the Android system USB stack for improved compatibility and resolving device disconnect issues on some head units.
+- **Portrait Layout Enhancements:** Fixed portrait layout scaling and overlay positioning on nearly square or compact displays.
+- **Loading Screen Media Scaling:** Added a custom scale slider settings option for the custom loading screen media (images/GIFs/videos) to adjust scaling to fit various screen sizes.
+
 ## v.3.0.0
 - **Custom Loading Screen:** Added support for setting a custom image, GIF, or video background to display while Android Auto is initializing.
 - **Settings Backup & Reset:** Added complete export, import, and factory reset functionality for all configuration options.
