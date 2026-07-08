@@ -38,14 +38,42 @@ Android assigns a unique name to every device for Wi-Fi Direct. You need this na
     - Click on **Wi-Fi Direct Device Names** and add the name you found in step 1.
     - *Tip:* The default name is `HURev`. You only need to enter a part of the name (e.g., `Android`) if it's unique enough.
 
-### 3. Initial Manual Pairing (Crucial)
+### 3. Static BSSID / MAC Address Entry (Android 12+)
+Beginning with Android 12, Google restricts access to device MAC addresses (returning `02:00:00:00:00:00` or `00:00:00:00:00:00`). If your tablet cannot auto-detect its P2P MAC address, you can manually enter the **Static BSSID** in Headunit Revived settings. 
+
+To find the tablet's Wi-Fi Direct BSSID (MAC Address) manually, use one of the following methods:
+
+#### Method 1: Using a Wi-Fi Scanner App (Easiest)
+1. Start the Wi-Fi Direct group on your tablet (HURev).
+2. Install a free Wi-Fi Analyzer/Scanner app (such as *WiFi Analyzer* by farproc) on your **phone**.
+3. Scan for nearby Wi-Fi networks in the analyzer app.
+4. Locate the network starting with `DIRECT-` (e.g., `DIRECT-xx-HURev`). The app will display its BSSID (MAC address) right next to the SSID.
+
+#### Method 2: From Phone Wi-Fi Connection Details
+1. Manually connect your phone to the tablet's Wi-Fi Direct group once.
+2. On your phone, go to **Settings -> Network & Internet -> Wi-Fi**.
+3. Tap the settings gear/info icon next to the connected `DIRECT-` network.
+4. Look for the **BSSID** or **Access Point MAC address** entry.
+
+#### Method 3: Using ADB (For Developers / Power Users)
+1. Connect the tablet to a computer via USB and enable USB Debugging.
+2. Open a terminal/command prompt and run:
+   ```bash
+   adb shell ip link
+   ```
+3. Locate the interface named `p2p0` or `p2p-p2p0-0`.
+4. The MAC address listed next to `link/ether` (e.g., `ee:2b:eb:74:e1:ec`) is your P2P BSSID.
+
+Once found, enter this MAC address in Headunit Revived Settings under **Static BSSID** (e.g. `ee:2b:eb:74:e1:ec`).
+
+### 4. Initial Manual Pairing (Crucial)
 For security, Android requires you to manually accept the first connection request between two devices.
 - Start the service in **Wireless Helper** on your phone.
 - Once the phone finds the tablet, a system dialog will appear on **both devices**.
 - Accept the connection on the tablet and the phone.
 - If your device offers an option like **"Always allow"** or **"Remember this device"**, make sure to check it!
 
-### 4. Automatic Operation
+### 5. Automatic Operation
 After the initial pairing is done, the process is fully automated:
 1. You get into the car.
 2. Bluetooth connects (if configured), triggering the **Wireless Helper**.

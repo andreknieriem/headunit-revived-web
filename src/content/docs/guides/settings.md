@@ -18,6 +18,7 @@ Manually select the application language. Headunit Revived supports 15+ language
 ### Wireless Mode (v2.2.0+)
 Defines how the app handles wireless connections.
 *   **Helper Mode (Recommended):** The tablet waits for a trigger from our companion app, **Wireless Helper**. Supports multiple strategies including Wi-Fi Direct (P2P), Shared Wi-Fi, and Google Nearby (Beta).
+    *   **Static BSSID (v3.1.1+):** Manually set the tablet's Wi-Fi Direct interface MAC address (BSSID) if auto-detection is blocked by system permission restrictions (returns `02:00:00:00:00:00`).
     *   **Configure Wireless Helper QR (v3.0.0+):** Generates and displays a QR code containing the tablet's active Hotspot credentials. Scan this QR code using the companion Wireless Helper app on your phone for instant, automatic configuration.
 *   **Native AA (Beta):** Implements the official Android Auto Wireless protocol. Allows phones to find the tablet directly in the Android Auto settings without a helper app.
 *   **Headunit Server:** 

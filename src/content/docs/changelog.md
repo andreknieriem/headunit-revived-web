@@ -3,6 +3,17 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.3.1.1-beta1
+- **Static BSSID Setting:** Added a setting to manually enter the tablet's Wi-Fi Direct BSSID (MAC Address). This bypasses Android 12+ MAC address access restrictions (returning `02:00:00:00:00:00`) and allows manual setup of Wi-Fi Direct connections.
+- **Adjustable Bluetooth Auto-Start Delay:** Added a preference setting in Wireless Helper to delay triggering the connection when Bluetooth connects (options: None, 2s, 5s, 10s, 15s, 20s, 30s) to give head units time to fully boot.
+- **Wi-Fi Direct Handshake Improvements:** Fixed a race condition where duplicate `createGroup` retry tasks were launched in the background after a group had successfully started, resolving subsequent connection failures.
+- **Background Execution Stability:** 
+  - Registered mandatory foreground service types for background execution on Android 14+.
+  - Dynamically managed wake locks (temporary during scanning, infinite while proxying AA data) to prevent the OS from suspending the helper service after 10 minutes.
+- **ML Kit QR Code Scanner Crash Fix:** Added ProGuard rules to prevent R8 from stripping Google ML Kit components, resolving a startup crash when opening the QR scanner in release builds.
+- **Keymap Focus Recovery:** Explicitly request focus for the touch overlay when window focus is regained or loading screens are hidden to ensure hardware and steering wheel buttons remain functional.
+- **Helper Hotspot Strategy Constraint:** Auto-enabling the Wi-Fi hotspot is now properly constrained to only run under Strategy 4 (Headunit Hotspot), preventing it from disabling Wi-Fi when using other strategies like Wi-Fi Direct.
+
 ## v.3.1.0
 - **Libusb Native USB Support:** Added a high-performance native USB stack wrapper using `libusb` as a selectable alternative to the Android system USB stack for improved compatibility and resolving device disconnect issues on some head units.
 - **Portrait Layout Enhancements:** Fixed portrait layout scaling and overlay positioning on nearly square or compact displays.
