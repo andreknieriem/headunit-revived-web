@@ -22,6 +22,12 @@ If you encounter issues while using Headunit Revived, check the following soluti
 ### USB Connection Fails
 - See the [Wired USB Guide](/guides/wired/#troubleshooting-usb) for specific USB tips.
 
+### Music keeps pausing / stopping (USB & Bluetooth connected)
+If music playback keeps pausing automatically when connected:
+- **Cause:** This is a known issue with Android Auto when connected via USB (or wireless) while simultaneously paired via Bluetooth. Bluetooth Media Audio conflicts with Android Auto's audio routing.
+- **Fix:** On your phone, go to **Bluetooth Settings**, tap the gear icon next to your headunit/car Bluetooth device, and **turn off "Media audio" / "Media Playback"** (leave "Phone calls" enabled if needed).
+- **Reference:** See the official [Google Support Community Thread](https://support.google.com/androidauto/thread/292803756/music-keeps-pausing-in-android-auto?hl=en).
+
 ### Wireless Connection Drops Frequently
 If your wireless connection works but drops after a short time, it's usually a phone setting.
 - **Cause:** Features like "WiFi Assistant" or "Switch to mobile data" kill the WiFi connection because the headunit's network has no internet.
