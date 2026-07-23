@@ -35,7 +35,9 @@ Defines how the app handles wireless connections.
     *   **Self-Mode:** Launches local Android Auto simulation.
     *   **Single USB:** Automatically connects if only one compatible USB device is found.
 *   **Auto-Start on Bluetooth:** Automatically opens the app when a specific Bluetooth device (e.g., your car) is connected.
+    *   **Select Bluetooth Adapter (v3.2.0+):** Choose the specific Bluetooth adapter/controller to use for the handshake. Useful for dual Bluetooth systems.
 *   **Auto-Start on WiFi (v2.2.2+):** Automatically opens the app and attempts to connect when a specific WiFi SSID is detected. Includes a warning for Android 8+ background restrictions.
+*   **Reopen on Reconnection (v3.2.0+):** When enabled, pressing Exit keeps the app running in the background monitoring USB. If a device reconnects, the app reopens automatically.
 *   **Kill on Disconnect (v2.2.0+):** Gracefully closes the app and background service when the phone is disconnected. Prevents battery drain when not in use.
 
 ### Backup & Reset (v3.0.0+)
@@ -91,6 +93,9 @@ Forces the video projection to fill the entire available screen area, ignoring t
 ### Forced Scale (v2.2.0+)
 (SurfaceView only) Manually forces the scaling logic to use the provided dimensions. Useful for displays with non-standard hardware scaling.
 
+### HUD Mode (Horizontal Flip) (v3.2.0+)
+Flips the video display horizontally for windshield reflection projection (Head-Up Display). **Note:** Requires `TextureView` or `GLES20` view mode (does not work with `SurfaceView`).
+
 ### Custom Insets (Margins)
 Manually adjust Top, Bottom, Left, Right margins (0 to 500px). **Crucial for buggy headunits** where system bars overlay the app buttons. Includes a live preview directly in the settings UI.
 
@@ -108,7 +113,7 @@ Customize the loading screen that appears while Android Auto is initializing:
 *   **DPI:** Controls the size of icons and text. Set to `0` for automatic detection.
 
 ### Video Codec & Performance
-*   **Video Codec:** Auto, H.264 (Standard), or H.265 (Better quality). 
+*   **Video Codec:** Auto, H.264 (Standard), or H.265 (Better quality). If you experience a solid green screen or heavy video distortion, switch to **H.264**.
 *   **H.265 Optimization:** Features dynamic buffer sizing (2MB for <=1080p, 8MB for 4K) to prevent crashes on Allwinner/Rockchip chipsets while maintaining 4K performance.
 *   **FPS Limit:** Toggle between 30 FPS (stable) and 60 FPS (smooth).
 *   **View Mode:** Select between SurfaceView (Efficient, Default), TextureView (Flexible), or GLES20 (Legacy/Hardware fix).

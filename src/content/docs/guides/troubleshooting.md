@@ -12,6 +12,11 @@ If you encounter issues while using Headunit Revived, check the following soluti
 - **Audio Sink:** Ensure the Audio Sink is configured correctly or try disabling it for testing.
 - **Video Renderer:** Switch between `TextureView` and `SurfaceView` in settings to see which performs better on your hardware.
 
+### Green Screen / Video Corruption
+- **Cause:** Certain hardware video decoders on Android head units fail to decode H.265 (HEVC) streams properly, resulting in a solid green screen or heavy pixelation/glitches.
+- **Fix:** Go to **Settings -> Video** -> **Video Codec** and switch from "Auto" / "H.265" to **H.264**.
+- **Alternative Fixes:** Switch the **View Mode** in **Settings -> Graphic** to `GLES20` or enable **Force Software Decoding** in Video settings.
+
 ### Video runs at 30 FPS / Feels slow when not interacting
 - **Design Choice:** This is a battery-saving design choice by Android Auto itself, not a bug in Headunit Revived. To save energy when the driver is not interacting with the screen, Android Auto reduces the frame rate to 30 FPS. It will instantly jump back up to 60 FPS when you tap the screen, move the map, or otherwise interact with the display.
 

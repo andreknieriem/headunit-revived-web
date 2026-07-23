@@ -3,6 +3,12 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Headunit Revived.
 ---
 
+## v.3.2.0-beta1
+- **HUD Mode (Horizontal Flip):** Added HUD Mode setting to flip the display horizontally for windshield reflection projection (requires TextureView or GLES20 view mode).
+- **Bluetooth Adapter Selection:** Added Bluetooth Adapter selection setting to pick specific Bluetooth controllers on dual-Bluetooth head units.
+- **Reopen on Reconnection:** Added option to keep background monitoring active when exiting so the app automatically reopens when a USB device is reconnected.
+- **Troubleshooting & Fixes:** Added Green Screen troubleshooting guidelines for H.265 decoders with H.264 switch solution.
+
 ## v.3.1.1-beta1
 - **Static BSSID Setting:** Added a setting to manually enter the tablet's Wi-Fi Direct BSSID (MAC Address). This bypasses Android 12+ MAC address access restrictions (returning `02:00:00:00:00:00`) and allows manual setup of Wi-Fi Direct connections.
 - **Adjustable Bluetooth Auto-Start Delay:** Added a preference setting in Wireless Helper to delay triggering the connection when Bluetooth connects (options: None, 2s, 5s, 10s, 15s, 20s, 30s) to give head units time to fully boot.
