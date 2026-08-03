@@ -1,9 +1,9 @@
 ---
 title: Setup Guide
-description: How to get started with Headunit Revived.
+description: How to get started with Open Headunit.
 ---
 
-Welcome to Headunit Revived! This guide will help you set up your Android device as an Android Auto headunit.
+Welcome to Open Headunit! This guide will help you set up your Android device as an Android Auto headunit.
 
 ## Prerequisites
 
@@ -13,9 +13,9 @@ Welcome to Headunit Revived! This guide will help you set up your Android device
 
 ## Installation
 
-Headunit Revived is available directly on the Google Play Store.
+Open Headunit is available directly on the Google Play Store.
 
-1. **Download:** Search for "Headunit Revived" in the Play Store on your tablet or click the link below.
+1. **Download:** Search for "Open Headunit" in the Play Store on your tablet or click the link below.
 2. **Install:** [Get it on Google Play](https://play.google.com/store/apps/details?id=com.andrerinas.headunitrevived)
 
 ## First Start

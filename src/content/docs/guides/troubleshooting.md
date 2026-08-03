@@ -3,7 +3,7 @@ title: Troubleshooting
 description: Common issues and how to fix them.
 ---
 
-If you encounter issues while using Headunit Revived, check the following solutions.
+If you encounter issues while using Open Headunit, check the following solutions.
 
 ## Common Issues
 
@@ -18,7 +18,7 @@ If you encounter issues while using Headunit Revived, check the following soluti
 - **Alternative Fixes:** Switch the **View Mode** in **Settings -> Graphic** to `GLES20` or enable **Force Software Decoding** in Video settings.
 
 ### Video runs at 30 FPS / Feels slow when not interacting
-- **Design Choice:** This is a battery-saving design choice by Android Auto itself, not a bug in Headunit Revived. To save energy when the driver is not interacting with the screen, Android Auto reduces the frame rate to 30 FPS. It will instantly jump back up to 60 FPS when you tap the screen, move the map, or otherwise interact with the display.
+- **Design Choice:** This is a battery-saving design choice by Android Auto itself, not a bug in Open Headunit. To save energy when the driver is not interacting with the screen, Android Auto reduces the frame rate to 30 FPS. It will instantly jump back up to 60 FPS when you tap the screen, move the map, or otherwise interact with the display.
 
 ### App Crashes
 - **Log Export:** Use the "In-App Log Export" feature in the settings to save a log file and share it on GitHub or the Google Group for debugging.
@@ -46,7 +46,7 @@ If you use the app in Portrait Mode and cannot interact with the map (but other 
 Google has disabled the automatic wireless projection startup for Android 10 and below in Android Auto versions 16.4 and higher. While Self-mode still works on newer Android versions, it is normally impossible to trigger projection on Android 10 and below directly.
 
 :::tip[Workaround: Connecting via Wi-Fi Loopback]
-You can bypass this restriction by starting the built-in Android Auto Headunit Server on your phone and connecting via Wi-Fi mode in Headunit Revived.
+You can bypass this restriction by starting the built-in Android Auto Headunit Server on your phone and connecting via Wi-Fi mode in Open Headunit.
 :::
 
 1. **Enable Android Auto Developer Options**
@@ -56,8 +56,8 @@ You can bypass this restriction by starting the built-in Android Auto Headunit S
    - Tap the three dots in the top-right corner of the Android Auto settings screen.
    - Select **Start head unit server** from the dropdown.
    - A persistent notification will appear in your status bar confirming the server is running.
-3. **Connecting via Wi-Fi Mode in Headunit Revived**
-   - Open Headunit Revived, go to Settings, and make sure your **Wireless Mode** is set to **Headunit Server**.
+3. **Connecting via Wi-Fi Mode in Open Headunit**
+   - Open Open Headunit, go to Settings, and make sure your **Wireless Mode** is set to **Headunit Server**.
    - Go back to the main screen and tap the **Wi-Fi** button.
    - The app will start scanning the network (in this case, your phone's internal loopback address).
    - Select your local Android Auto server from the available connections list to launch the dashboard successfully!

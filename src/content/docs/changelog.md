@@ -1,6 +1,6 @@
 ---
 title: Changelog
-description: Keep track of the latest changes and improvements in Headunit Revived.
+description: Keep track of the latest changes and improvements in Open Headunit.
 ---
 
 ## v.3.2.0-beta1
@@ -161,7 +161,7 @@ description: Keep track of the latest changes and improvements in Headunit Reviv
 - **Arabic Language Support:** Added full support for the Arabic language.
 - **Day/Night Mode Intent:** New intent for manually setting maps theme.
 - **Legacy UI Fixes:** Improved fullscreen support on Android 4.1 - 4.4.
-- **System Navigation Provider:** Registered HURev as an official navigation app.
+- **System Navigation Provider:** Registered OpenHU as an official navigation app.
 - **LegacyOptimizer:** Performance improvements for single-core CPUs.
 
 ## v.1.14.3

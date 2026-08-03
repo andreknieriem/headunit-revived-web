@@ -1,9 +1,9 @@
 ---
 title: Contributing Translations
-description: Help us translate Headunit Revived into your language.
+description: Help us translate Open Headunit into your language.
 ---
 
-Help us make HeadUnit Revived accessible to everyone by contributing translations!
+Help us make Open Headunit accessible to everyone by contributing translations!
 
 ## How to Contribute
 

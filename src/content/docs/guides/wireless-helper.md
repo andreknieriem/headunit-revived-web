@@ -3,11 +3,11 @@ title: Wireless Helper
 description: Use our companion app to automate your wireless connection.
 ---
 
-The **Wireless Helper** is the most reliable way to establish a wireless connection between your phone and Headunit Revived. It automates the handshake process so you don't have to touch your phone when you get into the car.
+The **Wireless Helper** is the most reliable way to establish a wireless connection between your phone and Open Headunit. It automates the handshake process so you don't have to touch your phone when you get into the car.
 
 ## Recommended: Wireless Helper
 
-We developed the **Wireless Helper** specifically for Headunit Revived. It is lightweight, modern, and supports both mDNS (Zero-Config), Wi-Fi Direct Auto-Connect, and Bluetooth auto-start.
+We developed the **Wireless Helper** specifically for Open Headunit. It is lightweight, modern, and supports both mDNS (Zero-Config), Wi-Fi Direct Auto-Connect, and Bluetooth auto-start.
 
 ### Setup
 1. **Head Unit:** Go to Settings -> Wireless Mode and select **Helper Mode**.
@@ -36,18 +36,18 @@ Android assigns a unique name to every device for Wi-Fi Direct. You need this na
     - Open the **Wireless Helper** app.
     - Set the **Connection Mode** to **Wi-Fi Direct**.
     - Click on **Wi-Fi Direct Device Names** and add the name you found in step 1.
-    - *Tip:* The default name is `HURev`. You only need to enter a part of the name (e.g., `Android`) if it's unique enough.
+    - *Tip:* The default name is `OpenHU`. You only need to enter a part of the name (e.g., `Android`) if it's unique enough.
 
 ### 3. Static BSSID / MAC Address Entry (Android 12+)
-Beginning with Android 12, Google restricts access to device MAC addresses (returning `02:00:00:00:00:00` or `00:00:00:00:00:00`). If your tablet cannot auto-detect its P2P MAC address, you can manually enter the **Static BSSID** in Headunit Revived settings. 
+Beginning with Android 12, Google restricts access to device MAC addresses (returning `02:00:00:00:00:00` or `00:00:00:00:00:00`). If your tablet cannot auto-detect its P2P MAC address, you can manually enter the **Static BSSID** in Open Headunit settings. 
 
 To find the tablet's Wi-Fi Direct BSSID (MAC Address) manually, use one of the following methods:
 
 #### Method 1: Using a Wi-Fi Scanner App (Easiest)
-1. Start the Wi-Fi Direct group on your tablet (HURev).
+1. Start the Wi-Fi Direct group on your tablet (OpenHU).
 2. Install a free Wi-Fi Analyzer/Scanner app (such as *WiFi Analyzer* by farproc) on your **phone**.
 3. Scan for nearby Wi-Fi networks in the analyzer app.
-4. Locate the network starting with `DIRECT-` (e.g., `DIRECT-xx-HURev`). The app will display its BSSID (MAC address) right next to the SSID.
+4. Locate the network starting with `DIRECT-` (e.g., `DIRECT-xx-OpenHU`). The app will display its BSSID (MAC address) right next to the SSID.
 
 #### Method 2: From Phone Wi-Fi Connection Details
 1. Manually connect your phone to the tablet's Wi-Fi Direct group once.
@@ -64,7 +64,7 @@ To find the tablet's Wi-Fi Direct BSSID (MAC Address) manually, use one of the f
 3. Locate the interface named `p2p0` or `p2p-p2p0-0`.
 4. The MAC address listed next to `link/ether` (e.g., `ee:2b:eb:74:e1:ec`) is your P2P BSSID.
 
-Once found, enter this MAC address in Headunit Revived Settings under **Static BSSID** (e.g. `ee:2b:eb:74:e1:ec`).
+Once found, enter this MAC address in Open Headunit Settings under **Static BSSID** (e.g. `ee:2b:eb:74:e1:ec`).
 
 ### 4. Initial Manual Pairing (Crucial)
 For security, Android requires you to manually accept the first connection request between two devices.
@@ -85,7 +85,7 @@ After the initial pairing is done, the process is fully automated:
 
 ## Alternative: Original Wireless Launcher
 
-Headunit Revived remains compatible with the original [Wireless Launcher](https://play.google.com/store/apps/details?id=com.borconi.emil.wifilauncherforhur) app.
+Open Headunit remains compatible with the original [Wireless Launcher](https://play.google.com/store/apps/details?id=com.borconi.emil.wifilauncherforhur) app.
 
 ### Setup
 1. **Head Unit:** Set Wireless Mode to **Helper Mode**.

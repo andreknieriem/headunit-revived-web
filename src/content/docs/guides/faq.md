@@ -1,12 +1,12 @@
 ---
 title: Frequently Asked Questions
-description: Common questions about Headunit Revived.
+description: Common questions about Open Headunit.
 ---
 
 ## General
 
 ### Do I need to root my Android Head Unit?
-**No.** HeadUnit Revived works on standard Android installations without root access.
+**No.** Open Headunit works on standard Android installations without root access.
 
 ### Which Android versions are supported?
 The app requires a Head Unit running **Android 4.1 (Jelly Bean)** or higher. For best performance, especially with wireless projection, **Android 9.0+** is recommended.

@@ -9,7 +9,7 @@ export default defineConfig({
 	base: '/',
 	integrations: [
 		starlight({
-			title: 'Headunit Revived',
+			title: 'Open Headunit',
 			description: 'Turn your Android device into a modern Android Auto Headunit.',
 			logo: {
 				src: './src/assets/logo.png',

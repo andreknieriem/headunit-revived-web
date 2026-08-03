@@ -1,9 +1,9 @@
 ---
 title: Wireless Connection
-description: Learn how to connect your phone wirelessly to Headunit Revived.
+description: Learn how to connect your phone wirelessly to Open Headunit.
 ---
 
-HeadUnit Revived allows you to connect your phone wirelessly via WiFi. In addition to standard network connections, the app now supports **Wi-Fi Direct (P2P)** for a seamless experience without needing a shared hotspot.
+Open Headunit allows you to connect your phone wirelessly via WiFi. In addition to standard network connections, the app now supports **Wi-Fi Direct (P2P)** for a seamless experience without needing a shared hotspot.
 
 ## Prerequisites
 
@@ -24,7 +24,7 @@ This is the most reliable way to connect. It uses the **Wireless Helper** app on
     *   **Zero-Config:** Automatically finds the headunit via NSD or P2P.
 
 **How to setup:**
-1. Set **Wireless Mode** to **Helper Mode** in Headunit Revived settings.
+1. Set **Wireless Mode** to **Helper Mode** in Open Headunit settings.
 2. Open the **Wireless Helper** app on your phone and start the service.
 3. The phone finds the tablet and launches Android Auto automatically.
 

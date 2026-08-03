@@ -1,9 +1,9 @@
 ---
 title: Application Settings
-description: Detailed explanation of all configuration options in Headunit Revived.
+description: Detailed explanation of all configuration options in Open Headunit.
 ---
 
-This page describes the various configuration options available in the Headunit Revived application.
+This page describes the various configuration options available in the Open Headunit application.
 
 ## General Settings
 
@@ -13,7 +13,7 @@ The fastest way to configure your device. This tool scans your hardware and disp
 - **Wizard steps:** Select your approximate display size and preferred orientation.
 
 ### Language
-Manually select the application language. Headunit Revived supports 15+ languages including English, German, Spanish, French, Italian, Portuguese, and more.
+Manually select the application language. Open Headunit supports 15+ languages including English, German, Spanish, French, Italian, Portuguese, and more.
 
 ### Wireless Mode (v2.2.0+)
 Defines how the app handles wireless connections.
@@ -73,7 +73,7 @@ Controls the theme of the projected Android Auto interface. It supports the same
 If enabled, the tablet's GPS data is shared with the phone to improve navigation accuracy and save phone battery.
 
 ### Navigation Provider (v1.15.0+)
-Headunit Revived registers as a system-wide navigation app (`category: maps`). This allows it to be recognized by vehicle systems (like BMW iDrive) as the primary nav app and display directions in native instrument clusters or HUDs.
+Open Headunit registers as a system-wide navigation app (`category: maps`). This allows it to be recognized by vehicle systems (like BMW iDrive) as the primary nav app and display directions in native instrument clusters or HUDs.
 
 ### Fake Speed (v2.2.0+)
 If enabled, the app reports a static speed of 10 km/h to the phone. This bypasses "Video Lock" or "Safety Lock" restrictions in many Android Auto apps (like YouTube or video players) while driving.
