@@ -47,6 +47,20 @@ Allows you to backup, restore, or clear your application settings configuration:
 *   **Reset Settings:** Clears all custom configurations, cached data, and auto-connection states, reverting the app to factory defaults.
 
 
+## Theming & Customization (v3.2.0+)
+
+### Customization Menu (v3.2.0+)
+Customize the visual appearance of the Open Headunit main interface:
+*   **Background Image:** Choose a custom image file (JPG, PNG, WebP) from your device's storage to set as the main home screen background. Features an image-only picker (`image/*`), a live preview box, and a *"Reset to Default"* button to revert to `bg.png`.
+
+### Custom Loading Screen (v3.0.0+)
+Customize the loading screen that appears while Android Auto is initializing:
+- **Media Path:** Select a custom image, GIF, or video file from your device.
+- **Show Loading Text:** Toggle the visibility of the initialization progress text.
+- **Keep Aspect Ratio:** Force the selected media to preserve its native aspect ratio instead of stretching.
+- **Scale (v3.1.0+):** Adjust the size/scaling of the loading screen media using a custom scale slider (e.g., to adjust the image or video to fit perfectly on different screens).
+- **Loop Video:** (If video selected) Continuously loops the video while loading.
+
 ## Dark Mode & UI Themes
 
 ### Application Theme (UI)
@@ -98,14 +112,6 @@ Flips the video display horizontally for windshield reflection projection (Head-
 
 ### Custom Insets (Margins)
 Manually adjust Top, Bottom, Left, Right margins (0 to 500px). **Crucial for buggy headunits** where system bars overlay the app buttons. Includes a live preview directly in the settings UI.
-
-### Custom Loading Screen (v3.0.0+)
-Customize the loading screen that appears while Android Auto is initializing:
-- **Media Path:** Select a custom image, GIF, or video file from your device.
-- **Show Loading Text:** Toggle the visibility of the initialization progress text.
-- **Keep Aspect Ratio:** Force the selected media to preserve its native aspect ratio instead of stretching.
-- **Scale (v3.1.0+):** Adjust the size/scaling of the loading screen media using a custom scale slider (e.g., to adjust the image or video to fit perfectly on different screens).
-- **Loop Video:** (If video selected) Continuously loops the video while loading.
 
 ### Resolution & DPI
 *   **Resolution:** 480p up to **2160p (4K)**.

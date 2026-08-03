@@ -3,11 +3,14 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Open Headunit.
 ---
 
-## v.3.2.0-beta1
+## v.3.2.0
+- **App Rebranding:** Renamed project from *Headunit Revived* to **Open Headunit** while maintaining package ID `com.andrerinas.headunitrevived` for seamless Play Store updates.
+- **Android Auto 17.4+ Compatibility:** On Android Auto 17.4+, Wireless Mode (including Wireless Helper) and Self-Mode require the Headunit Server (TCP 5277) to be running on the phone.
+- **Theming & Customization:** Added a dedicated **Theming** settings section and **Customization** menu with support for choosing a custom Home Screen Background Image.
 - **HUD Mode (Horizontal Flip):** Added HUD Mode setting to flip the display horizontally for windshield reflection projection (requires TextureView or GLES20 view mode).
 - **Bluetooth Adapter Selection:** Added Bluetooth Adapter selection setting to pick specific Bluetooth controllers on dual-Bluetooth head units.
 - **Reopen on Reconnection:** Added option to keep background monitoring active when exiting so the app automatically reopens when a USB device is reconnected.
-- **Troubleshooting & Fixes:** Added Green Screen troubleshooting guidelines for H.265 decoders with H.264 switch solution.
+- **Audio & Video Enhancements:** Audio focus management fixes, DUDU PiP fix, pixel aspect ratio controls, and automatic recovery from post-first-frame video display stalls.
 
 ## v.3.1.1-beta1
 - **Static BSSID Setting:** Added a setting to manually enter the tablet's Wi-Fi Direct BSSID (MAC Address). This bypasses Android 12+ MAC address access restrictions (returning `02:00:00:00:00:00`) and allows manual setup of Wi-Fi Direct connections.
