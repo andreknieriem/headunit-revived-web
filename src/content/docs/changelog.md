@@ -3,6 +3,14 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Open Headunit.
 ---
 
+## v.3.2.4
+- **Video Decoder Recovery & Stability:** Fixed video stalls and black screen regressions by preventing busy H.264/H.265 decoders from being misidentified as corrupt streams and extending input buffer wait timeouts (300ms) for lower-spec hardware (Intel Atom / MediaTek).
+- **Dynamic Video Reassembly Buffer:** Upgraded video fragment reassembly buffer to start at 2 MB and grow dynamically up to 8 MB for large 1440p and 4K keyframes.
+- **Log Storage Location Setting:** Added an option to store log files in the public **Downloads** folder (`/sdcard/Download/OpenHeadunitLogs`) to grant easy file access on older head units with restricted app storage file managers.
+- **USB Blacklist Filter:** Added USB device blacklist management allowing specific USB peripherals (VID/PID) to be ignored from triggering connection flows.
+- **Steering Wheel Button (CarKeyReceiver) Fixes:** Restored and expanded broadcast key intent filters to support Geely, ECARX, FYT, and custom vendor media keys.
+- **100% Complete Translations:** Synchronized and updated all settings, help dialogs, and support strings across all 19 supported languages.
+
 ## v.3.2.0
 - **App Rebranding:** Renamed project from *Headunit Revived* to **Open Headunit** while maintaining package ID `com.andrerinas.headunitrevived` for seamless Play Store updates.
 - **Android Auto 17.4+ Compatibility:** On Android Auto 17.4+, Wireless Mode (including Wireless Helper) and Self-Mode require the Headunit Server (TCP 5277) to be running on the phone.
