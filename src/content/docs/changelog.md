@@ -3,6 +3,31 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Open Headunit.
 ---
 
+## v.3.3.0-beta4
+- **Theming & Customization System:** Complete overhaul of home screen customization with custom wallpapers, gradient styles, custom button accent colors, size scaling, and OLED pure black night behavior.
+- **Architectural Refactoring:** Decoupled AapService into dedicated managers for Wi-Fi, Self-Mode, USB-Mode, Audio, and Video for improved performance and maintainability (thanks to @MrEAlderson and @o-jcardenass).
+- **USB-Blacklist Filter:** Prevent unwanted non-Android USB peripherals from triggering connection prompts.
+- **Clock Display Option:** Added option to hide or show the status bar clock on the home screen (thanks to @MrEAlderson).
+- **Per-Channel Audio Stream Selection:** Route Android Auto media, navigation, and speech audio to specific Android system audio streams (thanks to @nicoruy).
+- **Video Decoder Recovery & Transport Pacing:** Video pacing prevents shedding reference frames; improved hardware/software video concealment.
+- **Android 4.x (API 16-19) Compatibility:** Fixed crashes and padding issues on legacy Jelly Bean / KitKat head units.
+- **Orientation & Sensor Lock:** Resolved display distortion and landscape/portrait negotiation mismatches on portrait-panel devices.
+- **Microphone Uplink Fix:** Improved microphone routing and reliability during voice queries and calls.
+- **New Translations:** Added French 🇫🇷 (thanks to @phiDu-fr) and updated all 20 supported languages.
+
+## v.3.2.6
+- Fix settings UI crash and DPI input on older Android devices.
+- Fix video decoding artifacts and improve decoder stream watchdog.
+- Resolve wireless stack lockups where failures persisted until app restart.
+- Restored classic USB device list.
+- Reapply theme selection properly after settings backup import.
+- Extended HUD mode (horizontal flip) across the entire application.
+
+## v.3.2.5
+- Fix black screen after app backgrounding and washed-out picture from dropped frames.
+- Fix native headunit server socket leak.
+- Car GPS: Continuously stream vehicle GPS fix when requested by phone.
+
 ## v.3.2.4
 - **Video Decoder Recovery & Stability:** Fixed video stalls and black screen regressions by preventing busy H.264/H.265 decoders from being misidentified as corrupt streams and extending input buffer wait timeouts (300ms) for lower-spec hardware (Intel Atom / MediaTek).
 - **Dynamic Video Reassembly Buffer:** Upgraded video fragment reassembly buffer to start at 2 MB and grow dynamically up to 8 MB for large 1440p and 4K keyframes.

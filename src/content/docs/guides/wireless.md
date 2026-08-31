@@ -13,43 +13,48 @@ Open Headunit allows you to connect your phone wirelessly via WiFi. In addition 
     *   **Wi-Fi Direct (P2P):** (v2.0.0+) Best for stability. No hotspot required.
     *   **Shared WiFi:** Both devices connected to the same external router or mobile hotspot.
 
+:::caution[Android Auto 17.4+ Compatibility Notice]
+Starting with **Android Auto 17.4**, Google has restricted third-party background wireless triggers, breaking automated launch via **Wireless Helper** and third-party launchers, as well as classic **Self-Mode**.
+
+For devices running Android Auto 17.4 or newer:
+- **Self-Mode:** The **only remaining solution** is starting the native **Headunit Server** from Android Auto Developer Settings.
+- **Wireless Connection:** Use a **USB Wireless Dongle**, **Native Mode**, or the **Headunit Server**.
+- **Wireless Helper:** Continues to work reliably on devices running Android Auto **17.3 or older**.
+:::
+
 ## Connection Modes
 
-### 1. Helper Mode (Recommended)
-This is the most reliable way to connect. It uses the **Wireless Helper** app on your phone to trigger the connection automatically.
+### 1. USB Wireless Dongle (Most Reliable)
+A dedicated hardware USB Wireless Android Auto Dongle plugged into your headunit / tablet provides hardware-level plug-and-play without relying on Android Auto startup workarounds.
 
-*   **[Wireless Helper](https://github.com/andreknieriem/wireless-helper)** 
-    *   **Multi-Auto Support (v1.5.0):** Add multiple WiFi SSIDs and multiple P2P device names.
-    *   **Hybrid Trigger:** Reliable launch even on Gearhead 16.4+ (Android 14/15).
-    *   **Zero-Config:** Automatically finds the headunit via NSD or P2P.
+### 2. Native Mode (Wi-Fi Direct & Headunit Hotspot)
+Open Headunit implements the native Android Auto wireless handshake protocol directly.
+* Supports **Wi-Fi Direct (P2P)** for direct peer-to-peer connection without an external network.
+* Supports **Headunit Hotspot** mode where the headunit acts as the AP.
+* Configure in Open Headunit Settings under **Android Auto Mode** -> **Native Mode**.
+
+### 3. Headunit Server (Developer Mode - Required for Self-Mode on AA 17.4+)
+Uses the built-in Android Auto developer server running on the phone (or on the headunit itself for Self-Mode).
 
 **How to setup:**
-1. Set **Wireless Mode** to **Helper Mode** in Open Headunit settings.
-2. Open the **Wireless Helper** app on your phone and start the service.
-3. The phone finds the tablet and launches Android Auto automatically.
+1. **Enable Developer Mode:** Open Android Auto Settings on your phone -> tap **Version** 10 times.
+2. **Start Server:** Tap the three-dot menu in the top right corner and select **Start headunit server**.
+3. **Connect:** In Open Headunit, tap the **WiFi** dashboard button (or select Self-Mode).
 
-### 2. Auto-Scan Mode
-The headunit actively scans your network for phones running the native Android Auto "Headunit Server".
-
-1. **Phone:** Start the **Headunit Server** in Android Auto Developer Settings.
-2. **Head Unit:** Set **Wireless Mode** to **Auto-Scan Mode**.
-3. Projection will start automatically once the network is detected.
-
-### 3. Manual Mode
-Classic manual connection. Tap the **WiFi** button on the dashboard, then click **Scan** or enter the phone's IP manually.
+### 4. Wireless Helper (for Android Auto up to v17.3)
+Our companion app triggers projection automatically when entering your vehicle.
+* **Compatibility:** Android Auto **v17.3 and below**.
+* **Download:** [Wireless Helper on Google Play](https://play.google.com/store/apps/details?id=com.andrerinas.wirelesshelper)
+* **Setup:** Set Open Headunit to **Helper Mode**, connect both devices to the same network or Wi-Fi Direct group, and start the service in Wireless Helper.
 
 ---
 
 ## Technical Setup: Native Headunit Server
-To use **Auto-Scan** or **Manual Mode**, you must enable the native server on your phone:
+To use the **Headunit Server**, enable the native developer server on your phone:
 
 1. Open **Android Auto Settings**.
 2. Tap **Version** 10 times to enable Developer Settings.
 3. Click the three dots (top right) -> **Start Headunit Server**.
-
-:::important
-Native mode is often blocked by mobile hotspots. We highly recommend using **Helper Mode** for the best experience.
-:::
 
 ## Troubleshooting
 

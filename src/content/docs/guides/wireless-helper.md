@@ -3,7 +3,13 @@ title: Wireless Helper
 description: Use our companion app to automate your wireless connection.
 ---
 
-The **Wireless Helper** is the most reliable way to establish a wireless connection between your phone and Open Headunit. It automates the handshake process so you don't have to touch your phone when you get into the car.
+:::caution[Android Auto 17.4+ Compatibility]
+Wireless Helper is fully supported on phones running **Android Auto version 17.3 or older**.
+
+Starting with **Android Auto 17.4**, Google disabled the internal background intent used by helper apps. If your phone has updated to AA 17.4 or newer, please use **Native Mode**, a **USB Wireless Dongle**, or the **Headunit Server** (see [Wireless Connection Guide](/guides/wireless/)).
+:::
+
+The **Wireless Helper** is a companion app designed to automate the wireless connection between your phone and Open Headunit. It automates the handshake process so you don't have to touch your phone when you get into the car.
 
 ## Recommended: Wireless Helper
 
