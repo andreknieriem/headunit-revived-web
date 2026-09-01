@@ -3,16 +3,18 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Open Headunit.
 ---
 
-## v.3.3.0-beta4
+## v.3.3.0
 - **Theming & Customization System:** Complete overhaul of home screen customization with custom wallpapers, gradient styles, custom button accent colors, size scaling, and OLED pure black night behavior.
 - **Architectural Refactoring:** Decoupled AapService into dedicated managers for Wi-Fi, Self-Mode, USB-Mode, Audio, and Video for improved performance and maintainability (thanks to @MrEAlderson and @o-jcardenass).
 - **USB-Blacklist Filter:** Prevent unwanted non-Android USB peripherals from triggering connection prompts.
-- **Clock Display Option:** Added option to hide or show the status bar clock on the home screen (thanks to @MrEAlderson).
-- **Per-Channel Audio Stream Selection:** Route Android Auto media, navigation, and speech audio to specific Android system audio streams (thanks to @nicoruy).
+- **Clock & Status Display Option:** Added option to hide or show the status bar clock, phone signal, and battery level on the home screen (thanks to @MrEAlderson).
+- **Per-Channel Audio Stream Selection:** Route Android Auto media, navigation, and speech audio to specific Android system audio streams with live audio test playback (thanks to @nicoruy).
+- **Android Auto 17.4+ Compatibility Notice:** Added in-app guidance informing users about Google's breaking changes to third-party wireless launch triggers and pointing them to Developer Mode Headunit Server, Native Mode, or USB dongles.
 - **Video Decoder Recovery & Transport Pacing:** Video pacing prevents shedding reference frames; improved hardware/software video concealment.
-- **Android 4.x (API 16-19) Compatibility:** Fixed crashes and padding issues on legacy Jelly Bean / KitKat head units.
+- **Android 4.x (API 16-19) Compatibility:** Fixed crashes, layout padding, and IME issues on legacy Jelly Bean / KitKat head units.
 - **Orientation & Sensor Lock:** Resolved display distortion and landscape/portrait negotiation mismatches on portrait-panel devices.
-- **Microphone Uplink Fix:** Improved microphone routing and reliability during voice queries and calls.
+- **Microphone Uplink & Permissions:** Improved microphone routing and reliability, with proper `FOREGROUND_SERVICE_MICROPHONE` lifecycle management.
+- **Bluetooth Keyboard Stability:** Added config change handling so connecting or disconnecting a Bluetooth keyboard does not interrupt or restart the active projection session.
 - **New Translations:** Added French 🇫🇷 (thanks to @phiDu-fr) and updated all 20 supported languages.
 
 ## v.3.2.6
