@@ -29,29 +29,63 @@ These shortcuts are natively detected by **Samsung Modes & Routines** and can be
 `headunit://nightmode?state=<VALUE>`
 - **Values:** `day`, `night`, `auto` (restores automatic calculation)
 
-## Intent Actions
-If your automation app prefers standard Intent Actions over URIs, you can use:
+## Broadcast Intents (v3.4.0+ Recommended)
 
-- **Connect:** `com.andrerinas.headunitrevived.ACTION_CONNECT`
-- **Disconnect:** `com.andrerinas.headunitrevived.ACTION_DISCONNECT`
-- **Exit App:** `com.andrerinas.headunitrevived.ACTION_STOP_SERVICE`
-- **Night Mode:** `com.andrerinas.headunitrevived.ACTION_SET_NIGHT_MODE`
-    - Requires a String extra named `state` with value `day`, `night`, or `auto`.
+Starting with **v3.4.0**, Open Headunit provides a dedicated **Broadcast Receiver** (`AutomationReceiver`). Sending commands as a broadcast eliminates background activity start restrictions on Android 10+ and allows automation apps like **Tasker** and **MacroDroid** to operate without needing the "Display over other apps" permission.
 
-**Note:** These are Activity-based intents targetting the `AutomationActivity`.
+- **Package:** `com.andrerinas.headunitrevived`
+- **Receiver Class:** `com.andrerinas.openheadunit.automation.AutomationReceiver`
+- **Action Prefix:** `com.andrerinas.openheadunit.` (legacy prefix `com.andrerinas.headunitrevived.` is also supported as an alias)
+
+### Available Actions
+
+| Action (`com.andrerinas.openheadunit.`) | Extras | Description |
+| :--- | :--- | :--- |
+| `ACTION_CONNECT` | `ip` (String, optional), `no_ui` (Boolean) | Connects to Android Auto. If `ip` is specified, opens session to head unit server on port 5277. Without `ip`, checks USB. |
+| `ACTION_DISCONNECT` | | Safely ends the active projection session. |
+| `ACTION_START_SELF_MODE` | `no_ui` (Boolean) | Starts Self-Mode (projects device onto itself). |
+| `ACTION_STOP_SERVICE` | | Ends session and stops all background services. `ACTION_EXIT` is an accepted alias. |
+| `ACTION_SET_NIGHT_MODE` | `state` (`day`, `night`, or `auto`) | Directly switches UI theme. |
+| `ACTION_QUERY_STATE` | | Queries current projection state (returns JSON via ordered broadcast reply). |
+| `ACTION_START_WIRELESS` | | Arms the configured wireless mode. |
+| `ACTION_STOP_WIRELESS` | | Stops wireless listening mode. |
+| `ACTION_START_WIRELESS_SCAN` | | Initiates a single wireless network discovery pass. |
+
+> **Note:** Verbs that configure settings remotely require the **"Allow external configuration"** toggle to be enabled in Settings → Developer Diagnostics.
+
+## URI Schemes & Activity Intents
+
+For launcher shortcuts, simple Tasker tasks, or browser links, the standard activity deep-links remain fully supported:
+
+### URI Schemes
+- **Connect to IP:** `headunit://connect?ip=<PHONE_IP>`
+- **Connect (Last Device):** `headunit://connect`
+- **Disconnect:** `headunit://disconnect`
+- **Exit App:** `headunit://exit`
+- **Set Night Mode:** `headunit://nightmode?state=day|night|auto`
 
 ## Examples
 
-### ADB Command (Connect)
+### ADB Broadcast Command (Connect)
 ```bash
-adb shell am start -a android.intent.action.VIEW -d "headunit://connect?ip=192.168.1.25"
+adb shell am broadcast \
+  -n com.andrerinas.headunitrevived/com.andrerinas.openheadunit.automation.AutomationReceiver \
+  -a com.andrerinas.openheadunit.ACTION_CONNECT \
+  --es ip "192.168.1.25"
 ```
 
-### ADB Command (Night Mode)
+### ADB Broadcast Command (Query State)
+```bash
+adb shell am broadcast \
+  -n com.andrerinas.headunitrevived/com.andrerinas.openheadunit.automation.AutomationReceiver \
+  -a com.andrerinas.openheadunit.ACTION_QUERY_STATE
+```
+
+### ADB Deep Link (Activity)
 ```bash
 # Force night mode
 adb shell am start -a android.intent.action.VIEW -d "headunit://nightmode?state=night"
-```
 
-### Automation Apps
-Use the "Open Link" or "Send Intent" action in your preferred automation app with the URI scheme above. Ensure you replace `<PHONE_IP>` with the actual static IP of your phone.
+# Exit app
+adb shell am start -a android.intent.action.VIEW -d "headunit://exit"
+```

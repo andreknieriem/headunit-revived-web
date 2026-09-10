@@ -3,6 +3,30 @@ title: Changelog
 description: Keep track of the latest changes and improvements in Open Headunit.
 ---
 
+## v.3.4.0-beta1
+- **Video Fit Modes & Display Framing:** Replaced the legacy binary "Stretch to Fill" toggle with three distinct, intuitive display fitting modes (thanks to @o-jcardenass):
+  - **Stretch to fill (no bars, may distort):** Stretches the projected video to completely fill the screen, ignoring the original aspect ratio.
+  - **Fit with bars (no crop, no distortion):** Preserves the native aspect ratio without distortion, placing letterbox or pillarbox bars where needed.
+  - **Fill by cropping (no bars, no distortion):** Centers and scales the video to fill the entire usable screen while preserving aspect ratio, cropping minor overflow edges.
+- **Ultrawide Display Optimization & Dynamic Scaling:** Native support for ultrawide automotive displays (e.g. 1920x720, 1440x720, 1780x720). Instead of incorrectly applying a 1.5x vertical stretch or clipping, Open Headunit now announces the display's true pixel aspect ratio (`pixelAspectRatioE4`) to Android Auto and dynamically matches the visible canvas (thanks to @o-jcardenass and @Sesam17).
+- **Unified Touch Coordinate Mapping:** Rewrote and unified touch translation in `TouchCoordinateMapper` across all fit modes (Fill, Contain, Cover), custom insets, and ultrawide geometries, covered by comprehensive unit tests.
+- **Legacy SurfaceView (`forcedScale`) Fix:** Resolved a historical bug where `stretchToFill` was inverted when forced scaling was active on older Android 4.x/5.x hardware scalers. Existing configurations are cleanly migrated without breaking changes.
+- **Mid-Drive Resolution Lock:** Fixed a bug where dynamic session recalculations during auto-resolution mode dropped the active video stream down to 480p mid-drive.
+- **Floating Launcher Overlay Button & "More Features" Section:** Added a new customizable floating button overlay (`TYPE_APPLICATION_OVERLAY`) allowing drivers to jump directly back to their car's OEM or custom launcher. Includes controls for button size, opacity, and X/Y positioning (thanks to @Sesam17).
+- **Driver Selection (Multi-Phone Management):** Intelligently manage connections when multiple paired Bluetooth phones enter the vehicle simultaneously (thanks to @andreknieriem and @o-jcardenass). Modes include **Auto** (connects to preferred or last-connected device with a configurable countdown timer), **Always Ask** (shows a clean driver selection dialog), or **Disabled**.
+- **External Automation Command Surface:** Completely unified intent and deep-link control under `AutomationReceiver`. Automation apps (Tasker, MacroDroid, ADB) can now send broadcast commands without needing background activity permissions, query active connection state via `ACTION_QUERY_STATE`, and configure settings externally (thanks to @o-jcardenass).
+- **USB AOA Switch Diagnostics & Non-Pixel Phone Reliability:** Added diagnostic reporting for USB accessory handshake failures, support for all four AOA PIDs, asynchronous non-blocking AOA switching, and fixed connection loops with fast-reverting dongles (thanks to @o-jcardenass).
+- **Native AA Speed & Wi-Fi Direct Recovery:** Removed unnecessary handshake delays for faster wireless boot, ensured persistent P2P network identities across all Android API versions, and added recovery from wedged `createGroup` and cancelled wake pokes.
+
+## v.3.3.1
+- **Auto-Resume Media Playback on Reconnect:** Added an optional setting to automatically resume media playback if music was playing prior to an unexpected disconnect or brief power interruption (when reconnected within 60 seconds).
+- **Native Mode Wireless & Bluetooth Lifecycle:** Substantial improvements to Native Wireless Android Auto by @o-jcardenass:
+  - Wi-Fi Direct P2P persistent groups and 5 GHz channel pinning.
+  - Independent Bluetooth auto-start and auto-disconnect lifecycle (safely disconnects session when the car's Bluetooth link drops).
+  - Hands-free profile (HFP) link coordination and setup QR generation.
+- **Low-Power 2.4 GHz Optimization:** Dynamic protocol adjustments when operating on 2.4 GHz-only Wi-Fi radios.
+- **Play Console Stability & Crash Fixes:** Fixed reported edge-case crashes in coroutine lifecycle management and audio sinks.
+
 ## v.3.3.0
 - **Theming & Customization System:** Complete overhaul of home screen customization with custom wallpapers, gradient styles, custom button accent colors, size scaling, and OLED pure black night behavior.
 - **Architectural Refactoring:** Decoupled AapService into dedicated managers for Wi-Fi, Self-Mode, USB-Mode, Audio, and Video for improved performance and maintainability (thanks to @MrEAlderson and @o-jcardenass).

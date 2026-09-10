@@ -55,6 +55,12 @@ Implements the official Android Auto Wireless protocol. Allows phones to find th
 *   **Select Bluetooth Adapter (v3.2.0+):** Choose the specific Bluetooth adapter/controller to use for the handshake. Useful for dual-Bluetooth head unit systems.
 *   **Manual Secondary Bluetooth Service (v3.2.0+):** Specify secondary Bluetooth service parameters when integrating with proprietary dual-radio automotive boards.
 *   **Keep Dummy VPN:** Keeps a local dummy VPN running during wireless sessions to prevent Android from routing AAP traffic over cellular data.
+*   **Driver Selection (v3.4.0+):** Manages phone connection priority when multiple paired Bluetooth phones enter the vehicle simultaneously:
+    *   **Disabled:** Connects to the first responding device.
+    *   **Auto:** Automatically connects to the designated **Preferred Phone** (or last connected device) after a configurable countdown (default: 5s), giving you time to pick a different phone if needed.
+    *   **Always Ask:** Always displays a driver selection dialog before establishing a connection.
+    *   **Auto-Connect Countdown:** Adjust the auto-connection delay (3s to 15s).
+    *   **Preferred Phone:** Select your default primary phone from the list of paired devices.
 
 ### Headunit Server
 *   **Manual:** You must manually start the server on the phone (via Android Auto Developer Settings -> Start headunit server).
@@ -101,8 +107,14 @@ If enabled, the app reports a static speed of 10 km/h to the phone. This bypasse
 ### Screen Orientation
 Force the display orientation to **Default**, **Landscape**, **Portrait**, **Reverse Landscape**, **Reverse Portrait**, or follow the device's physical **Sensor** orientation.
 
-### Stretch to Fill (v2.1.0+)
-Forces the video projection to fill the entire available screen area, ignoring the original aspect ratio. Requires a session restart.
+### Video Fit (v3.4.0+)
+Controls how Android Auto video is fitted and scaled to your vehicle's display:
+*   **Stretch to fill (no bars, may distort):** Stretches the projected video across the entire usable screen area, ignoring the stream's original aspect ratio.
+*   **Fit with bars (no crop, no distortion):** Preserves the original aspect ratio without distortion, placing letterbox (top/bottom) or pillarbox (left/right) black bars as needed.
+*   **Fill by cropping (no bars, no distortion):** Scales and centers the video to completely fill the screen without distortion, cleanly cropping minor outer edges.
+
+### Ultrawide Display Optimization (v3.4.0+)
+Full native dynamic scaling for ultra-wide panoramic automotive screens (e.g. 1920x720, 1440x720, 1780x720). Open Headunit communicates the display's exact pixel aspect ratio (`pixelAspectRatioE4`) to Android Auto, eliminating vertical 1.5x stretching, truncated sidebars, and misaligned touch input.
 
 ### Pixel Aspect Ratio (PAR) (v3.1.0+)
 Fine-tunes the pixel aspect ratio multiplier to eliminate stretching or squishing on non-square pixel displays or ultrawide panoramic automotive screens.
@@ -194,6 +206,7 @@ Route Android Auto audio channels independently to specific Android system audio
 
 ### Media Integration (v2.2.0+)
 *   **Sync Media Session AA Metadata:** Mirrors the phone's "Now Playing" information (Title, Artist, Duration, Album Art) to the tablet's system media session and media notification. Useful for showing current track info on system dashboards or lock screens.
+*   **Auto-Resume Playback on Reconnect:** (Disabled by default) If music was actively playing when a connection drop or brief power interruption occurred, Open Headunit automatically sends a play command once the session is restored (within 60 seconds of disconnect). If music was paused or stopped before the disconnect, playback will remain paused.
 
 ### Microphone Input
 *   **Input Source:** Default, Microphone, Voice Recognition, or **Voice Communication** (Recommended for Echo Cancellation). Supports **Bluetooth SCO** for external mics.
@@ -212,6 +225,16 @@ Route Android Auto audio channels independently to specific Android system audio
 *   **Hide Clock:** Option to hide the status bar digital clock on the home screen.
 *   **Hide Phone Signal:** Option to hide the cellular phone signal strength indicator.
 *   **Hide Battery Level:** Option to hide the phone battery level indicator.
+
+
+## More Features (v3.4.0+)
+
+### Floating Launcher Overlay Button
+Displays a persistent, draggable floating button overlay (`TYPE_APPLICATION_OVERLAY`) over Android Auto projection, allowing drivers to quickly jump back to their car's original or custom Android launcher with a single tap:
+*   **Show Floating Launcher Button:** Toggles the overlay on or off (requires granting the "Display over other apps" permission).
+*   **Button Size:** Adjust button dimensions (from compact 40dp up to large 80dp).
+*   **Opacity:** Configure button transparency so it remains unobtrusive during navigation.
+*   **Position X / Y:** Customize horizontal and vertical resting screen coordinates.
 
 
 ## Exit & PiP (v2.2.0+)
@@ -256,3 +279,4 @@ Developer tools for testing low-memory conditions, transport pacing, and decoder
 *   **Force Memory Profile:** Simulate constrained or high-memory profiles.
 *   **Video Feed Hold:** Temporarily hold/pause the video feed for rendering pipeline inspection.
 *   **Video Fault Injection:** Test video decoder recovery under simulated network packet loss or corrupt byte streams.
+*   **Allow External Configuration (v3.4.0+):** When enabled, allows external automation applications (Tasker, MacroDroid, ADB) to change settings remotely via broadcast intents.
