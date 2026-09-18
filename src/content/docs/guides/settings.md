@@ -152,6 +152,7 @@ Customize the visual appearance of the Open Headunit main interface:
 *   **Background Image:** Choose a custom image file (JPG, PNG, WebP) from your device's storage to use as the background for the main home screen. Features an image-only picker, a live background preview, and a *"Reset to Default"* button to easily revert to the default gradient (`bg.png`).
 *   **Theme & Gradients (v3.3.0+):** Choose custom gradient styles, button accent colors, and custom button scaling.
 *   **OLED Pure Black (v3.3.0+):** Forces true `#000000` pitch black backgrounds in night mode for OLED panels.
+*   **UI Scale (v3.4.0+):** Fine-tune the overall interface and typography scale (100% to 150%) across home menus, dialogs, and settings to suit varying display distances and DPIs.
 
 ### Custom Loading Screen (v3.0.0+)
 Customize the loading screen that appears while Android Auto is initializing:
@@ -160,6 +161,7 @@ Customize the loading screen that appears while Android Auto is initializing:
 *   **Keep Aspect Ratio:** Force the selected media to preserve its native aspect ratio instead of stretching.
 *   **Scale (v3.1.0+):** Adjust the size/scaling of the loading screen media using a custom scale slider (e.g., to adjust the image or video to fit perfectly on different screens).
 *   **Loop Video:** (If video selected) Continuously loops the video while loading.
+*   **Dark Mode Splash Screen (v3.4.0+):** Seamless pitch-black OLED background transition during early startup and loading sequence.
 
 
 ## Dark Mode & UI Themes
@@ -203,6 +205,7 @@ Route Android Auto audio channels independently to specific Android system audio
     *   **Lower (1x-2x):** Less lag, better for voice commands.
     *   **Higher (4x-8x):** Less stuttering on unstable WiFi connections.
 *   **Audio Queue Capacity:** Limits the number of audio chunks waiting to be processed. Prevents audio from drifting further behind when the network is slow (Backpressure).
+*   **Audio Sink Health Monitor (v3.4.0+):** Real-time buffer telemetry that dynamically deepens buffer capacity when underruns occur to avoid audio stutter.
 
 ### Media Integration (v2.2.0+)
 *   **Sync Media Session AA Metadata:** Mirrors the phone's "Now Playing" information (Title, Artist, Duration, Album Art) to the tablet's system media session and media notification. Useful for showing current track info on system dashboards or lock screens.
@@ -215,7 +218,7 @@ Route Android Auto audio channels independently to specific Android system audio
 *   **Use AAC Audio:** (Experimental) Uses compressed audio to save WiFi bandwidth.
 
 ### Input Controls
-*   **Keymap:** Map physical keys (steering wheel, knobs) to AA functions. Supports 17+ proprietary steering wheel protocols.
+*   **Keymap:** Map physical keys (steering wheel, knobs) to AA functions. Supports 17+ proprietary steering wheel protocols (including BYD steering wheel and panel key broadcasts).
 *   **Enable Rotary:** Enables support for iDrive-style rotary controllers and trackpads.
 *   **Media Key Routing (v3.2.4+):** Choose whether steering wheel and hardware media buttons (Play, Pause, Next, Prev) are forwarded to Android Auto or retained locally by the head unit's native media player.
 
@@ -232,9 +235,15 @@ Route Android Auto audio channels independently to specific Android system audio
 ### Floating Launcher Overlay Button
 Displays a persistent, draggable floating button overlay (`TYPE_APPLICATION_OVERLAY`) over Android Auto projection, allowing drivers to quickly jump back to their car's original or custom Android launcher with a single tap:
 *   **Show Floating Launcher Button:** Toggles the overlay on or off (requires granting the "Display over other apps" permission).
-*   **Button Size:** Adjust button dimensions (from compact 40dp up to large 80dp).
-*   **Opacity:** Configure button transparency so it remains unobtrusive during navigation.
+*   **Button Size:** Adjust button dimensions (from compact 32dp up to large 120dp).
+*   **Opacity:** Configure button transparency (10% to 100%) so it remains unobtrusive during navigation.
 *   **Position X / Y:** Customize horizontal and vertical resting screen coordinates.
+
+### Android Auto Exit Action (v3.4.0+)
+Configures what occurs when the exit action inside Android Auto or the floating button is triggered:
+*   **OEM Launcher:** Immediately switches to the vehicle's default home screen launcher.
+*   **App Home:** Returns to Open Headunit's main home screen.
+*   **Disconnect:** Completely stops the Android Auto projection session and disconnects the phone.
 
 
 ## Exit & PiP (v2.2.0+)
@@ -266,10 +275,12 @@ Allows you to backup, restore, or clear your application settings configuration:
     *   **Direct File:** Writes application events directly to a log file. Bypasses logcat permission checks, enabling hassle-free logging on modern Android versions.
 *   **Log Storage Location (v3.2.4+):** Choose between **Default (App Storage)** (`getExternalFilesDir`) and **Downloads Folder** (`/sdcard/Download/OpenHeadunitLogs`). Useful for legacy head units where file managers cannot access private app storage.
 *   **Log Capture:** Real-time capture of system and AAP logs.
+*   **Copy Logs to Clipboard (v3.4.0+):** Directly copy recorded logs to the clipboard with memory safety checks (capped for Android 4 Binder safety) for fast bug reporting.
 *   **Export Logs:** Save logs to a public folder to share with developers.
 
-### Show FPS Counter
-Displays a real-time overlay with current FPS, bitrate, and decoder latency.
+### Show Performance Overlay (v3.4.0+)
+Displays a real-time overlay during projection showing current FPS, video throughput/bitrate, and decoder latency:
+*   **Overlay Position:** Place the overlay in the **Left** or **Right** top corner, useful when vehicle status bars or overlays obstruct one corner.
 
 ### Use Native SSL
 Uses native OpenSSL for significantly better performance on older chipsets. Mandatory for Android 15+.
