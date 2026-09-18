@@ -24,9 +24,6 @@ Manually select the application language. Open Headunit supports 20+ languages i
 ### Vehicle Info Settings (v3.2.0+)
 Customize the vehicle **Make**, **Model**, and **Year** reported to Android Auto during the initial protocol handshake.
 
-### UI Scale
-Adjust the overall scale and font size of the application settings, dialogs, and main menus for optimal visibility on displays of varying sizes and distances.
-
 ### Show Toast Messages
 Toggles floating on-screen status and connection toast notifications.
 
@@ -55,6 +52,8 @@ Implements the official Android Auto Wireless protocol. Allows phones to find th
 *   **Select Bluetooth Adapter (v3.2.0+):** Choose the specific Bluetooth adapter/controller to use for the handshake. Useful for dual-Bluetooth head unit systems.
 *   **Manual Secondary Bluetooth Service (v3.2.0+):** Specify secondary Bluetooth service parameters when integrating with proprietary dual-radio automotive boards.
 *   **Keep Dummy VPN:** Keeps a local dummy VPN running during wireless sessions to prevent Android from routing AAP traffic over cellular data.
+*   **External Bluetooth (ZBT Transport) (v3.4.0+):** Carries Native AA Bluetooth handshakes directly over the head unit's proprietary Bluetooth module via the vendor daemon, enabling Native AA on hardware where Android cannot reach the Bluetooth controller directly.
+*   **Connection Status Pill (v3.4.0+):** Live status pill on the home screen displaying current Native AA connection states, diagnostics (such as Wi-Fi radio off warnings), and auto-connect countdowns.
 *   **Driver Selection (v3.4.0+):** Manages phone connection priority when multiple paired Bluetooth phones enter the vehicle simultaneously:
     *   **Disabled:** Connects to the first responding device.
     *   **Auto:** Automatically connects to the designated **Preferred Phone** (or last connected device) after a configurable countdown (default: 5s), giving you time to pick a different phone if needed.
@@ -79,6 +78,7 @@ Implements the official Android Auto Wireless protocol. Allows phones to find th
 *   **Reopen on Reconnection (v3.2.0+):** When pressing Exit, the app stays running in the background monitoring USB. If a device reconnects, the app reopens automatically.
 *   **Kill on Disconnect (v2.2.0+):** Gracefully closes the app and the foreground service when the phone is disconnected. Prevents battery drain when not in use.
 *   **Raise Projection During Call (v3.2.0+):** Automatically brings the Android Auto projection screen to the foreground when an incoming or outgoing phone call is initiated.
+*   **OEM App Management (v3.4.0+):** Automatically closes or disables conflicting factory projection apps (such as Zlink, AutoKit, SpeedPlay, or Carlink) upon startup via Root or an internal ADB server, preventing OEM apps from hijacking USB or wireless adapters. Displays copyable ADB commands for manual configuration when root/ADB is not yet granted.
 
 
 ## Navigation & Safety
